@@ -1,48 +1,44 @@
 <script lang="ts">
-  import { Page } from "$lib/types";
+  import type { OrthographicCamera } from "three";
   import { T, useFrame } from "@threlte/core";
-  import type { OrthographicCamera, WebGLRenderTarget } from "three";
+  import { onMount } from "svelte";
+  import { Page } from "$lib/types";
+  import { renderTarget, activePage } from "$lib/stores";
   import Home from "./pages/Home.svelte";
   import About from "./pages/About.svelte";
-  import { onMount } from "svelte";
-
-  export let renderTarget: WebGLRenderTarget;
-  export let page: Page;
 
   let camera: OrthographicCamera;
-  const frustum = 1;
-  const frustumAspect = 1.18;
 
   onMount(() => {
     camera.updateProjectionMatrix();
   });
 
-  // useFrame(({ renderer, scene }) => {
-  //   if (renderer) {
-  //     // Add passes - chroma, glitch?, scanlines
-  //     renderer.setRenderTarget(renderTarget);
-  //     renderer.render(scene, camera);
-  //     renderer.setRenderTarget(null);
-  //   }
-  // });
+  useFrame(({ renderer, scene }) => {
+    if (renderer) {
+      // Add passes - chroma, glitch?, scanlines
+      renderer.setRenderTarget($renderTarget);
+      renderer.render(scene, camera);
+      renderer.setRenderTarget(null);
+    }
+  });
 </script>
 
-<T.Group position={[0, -3, 0]}>
+<T.Group {...$$restProps}>
   <T.OrthographicCamera
-    left={-frustum * frustumAspect}
-    right={frustum * frustumAspect}
-    top={frustum}
-    bottom={-frustum}
+    left={-1.2}
+    right={1.2}
+    top={1.1}
+    bottom={-1.1}
     manual
     bind:ref={camera}
     position={[0, 0, 10]}
   />
 
-  {#if page == Page.Home}
+  {#if $activePage == Page.Home}
     <Home />
   {/if}
 
-  {#if page == Page.About}
+  {#if $activePage == Page.About}
     <About />
   {/if}
 </T.Group>

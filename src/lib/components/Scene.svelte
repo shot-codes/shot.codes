@@ -8,15 +8,21 @@
     useFrame,
   } from "@threlte/core";
   import { useGltf } from "@threlte/extras";
-  import { WebGLRenderTarget, Mesh, type MeshStandardMaterial, Color, OrthographicCamera } from "three";
+  import {
+    WebGLRenderTarget,
+    Mesh,
+    type MeshStandardMaterial,
+    Color,
+    OrthographicCamera,
+  } from "three";
   import { DEG2RAD } from "three/src/math/MathUtils";
   import SubScene from "./SubScene.svelte";
   import { get } from "svelte/store";
-    import { onMount } from "svelte";
+  import { onMount } from "svelte";
 
   let subSceneRenderTarget = new WebGLRenderTarget(720, 720);
   let page: Page = Page.Home;
-  let camera : OrthographicCamera;
+  let camera: OrthographicCamera;
 
   const { gltf } = useGltf<{
     nodes: {
@@ -33,14 +39,6 @@
 
   $: nodes = $gltf?.nodes;
   $: materials = $gltf?.materials;
-
-  $: {
-    if (materials) {
-      console.log(materials["Screen Surface"])
-      materials["Screen Surface"].map = subSceneRenderTarget.texture;
-      materials["Screen Surface"].color = new Color(0xffffff);
-    }
-  }
 
   onMount(() => {
     camera.updateProjectionMatrix();
@@ -64,16 +62,16 @@
 <T.DirectionalLight position={[-3, 10, -10]} intensity={0.2} />
 <T.AmbientLight intensity={0.2} />
 
-<T.Mesh position.z={-0.39}>
+<T.Mesh position.y={0.51} position.z={-6.2} position.x={0.04}>
   <T.SphereGeometry
     args={[
-      1,
+      5.2,
       20,
       20,
-      (4 * Math.PI) / 11,
-      (3 * Math.PI) / 11,
-      (2 * Math.PI) / 5,
-      Math.PI / 5,
+      (8 * Math.PI) / 18,
+      (2 * Math.PI) / 18,
+      (1.02 * (2 * Math.PI)) / 5,
+      (0.95 * Math.PI) / 10,
     ]}
   />
   <T.MeshBasicMaterial map={subSceneRenderTarget.texture} />
@@ -83,10 +81,10 @@
 
 <T.Group position={[0, -3, 0]}>
   <T.OrthographicCamera
-    left={-5}
+    left={-1}
     right={1}
     top={1}
-    bottom={-7}
+    bottom={-1}
     manual
     bind:ref={camera}
     position={[0, 0, 10]}
@@ -99,14 +97,12 @@
       type={Mesh}
       geometry={nodes.Nodes.geometry}
       material={materials["Monitor White Plastic"]}
-      scale={0.5}
     />
-    <Three
+    <!-- <Three
       type={Mesh}
       geometry={nodes.Nodes_1.geometry}
       material={materials["Screen Surface"]}
-      scale={0.5}
-    />
+    /> -->
   </T.Group>
 {/if}
 

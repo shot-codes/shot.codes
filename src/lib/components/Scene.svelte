@@ -8,13 +8,15 @@
     useFrame,
   } from "@threlte/core";
   import { useGltf } from "@threlte/extras";
-  import { WebGLRenderTarget, Mesh, type MeshStandardMaterial } from "three";
+  import { WebGLRenderTarget, Mesh, type MeshStandardMaterial, Color, OrthographicCamera } from "three";
   import { DEG2RAD } from "three/src/math/MathUtils";
   import SubScene from "./SubScene.svelte";
   import { get } from "svelte/store";
+    import { onMount } from "svelte";
 
-  let subSceneRenderTarget = new WebGLRenderTarget(512, 512);
+  let subSceneRenderTarget = new WebGLRenderTarget(720, 720);
   let page: Page = Page.Home;
+  let camera : OrthographicCamera;
 
   const { gltf } = useGltf<{
     nodes: {
@@ -34,15 +36,21 @@
 
   $: {
     if (materials) {
+      console.log(materials["Screen Surface"])
       materials["Screen Surface"].map = subSceneRenderTarget.texture;
+      materials["Screen Surface"].color = new Color(0xffffff);
     }
   }
 
-  useFrame(({ renderer, scene, camera }) => {
+  onMount(() => {
+    camera.updateProjectionMatrix();
+  });
+
+  useFrame(({ renderer, scene }) => {
     if (renderer) {
       // Add passes - chroma, glitch?, scanlines
       renderer.setRenderTarget(subSceneRenderTarget);
-      renderer.render(scene, get(camera));
+      renderer.render(scene, camera);
       renderer.setRenderTarget(null);
     }
   });
@@ -72,6 +80,18 @@
 </T.Mesh>
 
 <T.AxesHelper />
+
+<T.Group position={[0, -3, 0]}>
+  <T.OrthographicCamera
+    left={-5}
+    right={1}
+    top={1}
+    bottom={-7}
+    manual
+    bind:ref={camera}
+    position={[0, 0, 10]}
+  />
+</T.Group>
 
 {#if nodes && materials}
   <T.Group rotation.y={270 * DEG2RAD}>

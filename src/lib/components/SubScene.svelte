@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { OrthographicCamera } from "three";
-  import { T, useFrame } from "@threlte/core";
+  import { T, useFrame, LayerableObject } from "@threlte/core";
   import { onMount } from "svelte";
   import { Page } from "$lib/types";
   import { renderTarget, activePage } from "$lib/stores";
@@ -21,9 +21,14 @@
       renderer.setRenderTarget(null);
     }
   });
+
+  let group;
+
+  $: console.log(group);
 </script>
 
-<T.Group {...$$restProps}>
+<T.Group bind:ref={group} let:ref {...$$restProps}>
+  <LayerableObject object={ref} />
   <T.OrthographicCamera
     left={-1.2}
     right={1.2}

@@ -1,10 +1,13 @@
 <script lang="ts">
-  import { T, OrbitControls } from "@threlte/core";
+  import { T, OrbitControls, Layers, LayerableObject } from "@threlte/core";
 </script>
 
-<T.PerspectiveCamera makeDefault position={[0, 0, 3]} fov={50}>
-  <OrbitControls />
-</T.PerspectiveCamera>
+<Layers layers={0}>
+  <T.PerspectiveCamera let:ref makeDefault position={[0, 0, 3]} fov={50}>
+    <LayerableObject object={ref} />
+    <OrbitControls />
+  </T.PerspectiveCamera>
+</Layers>
 
 <T.DirectionalLight castShadow position={[3, 10, 10]} />
 <T.DirectionalLight position={[-3, 10, -10]} intensity={0.2} />

@@ -7,6 +7,8 @@
   import Home from "./pages/Home.svelte";
   import About from "./pages/About.svelte";
 
+  export const supressRestPropTypeError = null;
+
   let camera: OrthographicCamera;
 
   onMount(() => {
@@ -21,14 +23,9 @@
       renderer.setRenderTarget(null);
     }
   });
-
-  let group;
-
-  $: console.log(group);
 </script>
 
-<T.Group bind:ref={group} let:ref {...$$restProps}>
-  <LayerableObject object={ref} />
+<T.Group let:ref {...$$restProps}>
   <T.OrthographicCamera
     left={-1.2}
     right={1.2}

@@ -30,99 +30,111 @@
   });
 </script>
 
-<T.Mesh scale={1.3}>
+<T.Mesh scale={1.0} position.y={0.4} position.x={0.3}>
   <T.PlaneGeometry />
-  <T.MeshBasicMaterial map={useTexture("/xp-window.png")} />
+  <T.MeshBasicMaterial map={useTexture("/xp-limo.png")} />
 </T.Mesh>
 
-<T.Group position.y={-0.1}>
-  {#if limoTop}
-    <Three
-      type={limoTop}
-      scale={0.07}
-      position.z={1}
-      position.y={0.2}
-      rotation.z={rotation}
-      rotation.x={2}
-    >
-      <Three type={MeshBasicMaterial} wireframe={true} color="#00ff00" />
-    </Three>
-  {/if}
+<T.Mesh scale={1.0} position.y={-0.4} position.x={0.2}>
+  <T.PlaneGeometry />
+  <T.MeshBasicMaterial map={useTexture("/xp-limo2.png")} />
+</T.Mesh>
 
-  {#if limoMid}
-    <Three
-      type={limoMid}
-      scale={0.07}
-      position.z={1}
-      rotation.z={rotation}
-      rotation.x={2}
-    >
-      <Three type={MeshBasicMaterial} wireframe={true} color="#00ff00" />
-    </Three>
-  {/if}
+<T.Group position.x={-0.3}>
+  <T.Mesh scale={1.3}>
+    <T.PlaneGeometry />
+    <T.MeshBasicMaterial map={useTexture("/xp-window.png")} />
+  </T.Mesh>
 
-  {#if limoBottom}
-    <Three
-      type={limoBottom}
-      scale={0.07}
-      position.z={1}
-      position.y={-0.2}
-      rotation.z={rotation}
-      rotation.x={2}
-    >
-      <Three type={MeshBasicMaterial} wireframe={true} color="#00ff00" />
-    </Three>
-  {/if}
+  <T.Group position.y={-0.1}>
+    {#if limoTop}
+      <Three
+        type={limoTop}
+        scale={0.07}
+        position.z={1}
+        position.y={0.2}
+        rotation.z={rotation}
+        rotation.x={2}
+      >
+        <Three type={MeshBasicMaterial} wireframe={true} color="#00ff00" />
+      </Three>
+    {/if}
 
-  {#if limoLB}
-    <Three
-      type={limoLB}
-      scale={0.07}
-      position.z={1}
-      position.y={-0.2}
-      rotation.z={rotation}
-      rotation.x={2}
-    >
-      <Three type={MeshBasicMaterial} wireframe={true} color="#00ff00" />
-    </Three>
-  {/if}
+    {#if limoMid}
+      <Three
+        type={limoMid}
+        scale={0.07}
+        position.z={1}
+        rotation.z={rotation}
+        rotation.x={2}
+      >
+        <Three type={MeshBasicMaterial} wireframe={true} color="#00ff00" />
+      </Three>
+    {/if}
 
-  {#if limoRB}
-    <Three
-      type={limoRB}
-      scale={0.07}
-      position.z={1}
-      position.y={-0.2}
-      rotation.z={rotation}
-      rotation.x={2}
-    >
-      <Three type={MeshBasicMaterial} wireframe={true} color="#00ff00" />
-    </Three>
-  {/if}
+    {#if limoBottom}
+      <Three
+        type={limoBottom}
+        scale={0.07}
+        position.z={1}
+        position.y={-0.2}
+        rotation.z={rotation}
+        rotation.x={2}
+      >
+        <Three type={MeshBasicMaterial} wireframe={true} color="#00ff00" />
+      </Three>
+    {/if}
 
-  {#if limoLF}
-    <Three
-      type={limoLF}
-      scale={0.07}
-      position.z={1}
-      position.y={-0.2}
-      rotation.z={rotation}
-      rotation.x={2}
-    >
-      <Three type={MeshBasicMaterial} wireframe={true} color="#00ff00" />
-    </Three>
-  {/if}
+    {#if limoLB}
+      <Three
+        type={limoLB}
+        scale={0.07}
+        position.z={1}
+        position.y={-0.2}
+        rotation.z={rotation}
+        rotation.x={2}
+      >
+        <Three type={MeshBasicMaterial} wireframe={true} color="#00ff00" />
+      </Three>
+    {/if}
 
-  {#if limoRF}
-    <Three
-      type={limoRF}
-      scale={0.07}
-      position.z={1}
-      position.y={-0.2}
-      rotation.z={rotation}
-      rotation.x={2}
-    >
-      <Three type={MeshBasicMaterial} wireframe={true} color="#00ff00" />
-    </Three>
-  {/if}
+    {#if limoRB}
+      <Three
+        type={limoRB}
+        scale={0.07}
+        position.z={1}
+        position.y={-0.2}
+        rotation.z={rotation}
+        rotation.x={2}
+      >
+        <Three type={MeshBasicMaterial} wireframe={true} color="#00ff00" />
+      </Three>
+    {/if}
+
+    {#if limoLF}
+      <Three
+        type={limoLF}
+        scale={0.07}
+        position.z={1}
+        position.y={-0.2}
+        rotation.z={rotation}
+        rotation.x={2}
+      >
+        <Three type={MeshBasicMaterial} wireframe={true} color="#00ff00" />
+      </Three>
+    {/if}
+
+    {#if limoRF}
+      <Three
+        type={limoRF}
+        scale={0.07}
+        position.z={1}
+        position.y={-0.2}
+        rotation.z={rotation}
+        rotation.x={2}
+      >
+        <Three type={MeshBasicMaterial} wireframe={true} color="#00ff00" />
+      </Three>
+    {/if}
+  </T.Group>
 </T.Group>

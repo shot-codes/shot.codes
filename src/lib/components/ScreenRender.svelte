@@ -1,12 +1,6 @@
 <script lang="ts">
   import type { OrthographicCamera } from "three";
-  import { T, useFrame, useTexture, useThrelte } from "@threlte/core";
-  import {
-    BloomEffect,
-    EffectComposer,
-    EffectPass,
-    RenderPass,
-  } from "postprocessing";
+  import { T, useFrame, useTexture } from "@threlte/core";
   import { onMount } from "svelte";
   import { Page } from "$lib/types";
   import { renderTarget, activePage } from "$lib/stores";
@@ -18,18 +12,10 @@
 
   let camera: OrthographicCamera;
 
-  const { renderer, scene } = useThrelte();
-  const composer = new EffectComposer(renderer);
 
-  $: {
-    if (camera) {
-      composer.addPass(new RenderPass(scene, camera));
-      composer.addPass(new EffectPass(camera, new BloomEffect()));
-    }
-  }
 
-  useFrame(() => {
-    if (!renderer || !composer) return;
+  useFrame(( { renderer, scene}) => {
+    if (!renderer) return;
     renderer.setRenderTarget($renderTarget);
     // composer.render()
     renderer.render(scene, camera);

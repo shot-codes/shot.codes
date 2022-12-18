@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { OrthographicCamera } from "three";
-  import { T, useFrame } from "@threlte/core";
+  import { T, useFrame, useTexture } from "@threlte/core";
   import { onMount } from "svelte";
   import { Page } from "$lib/types";
   import { renderTarget, activePage } from "$lib/stores";
@@ -25,7 +25,20 @@
   });
 </script>
 
+
+
 <T.Group let:ref {...$$restProps}>
+
+  <!-- Background -->
+  <T.Group position={[0,0,-2]} scale={2.4}>
+    <T.Mesh>
+      <T.PlaneGeometry/>
+      <T.MeshBasicMaterial
+        map={useTexture("/bliss.png")}
+      />
+    </T.Mesh>
+  </T.Group>
+
   <T.OrthographicCamera
     left={-1.2}
     right={1.2}

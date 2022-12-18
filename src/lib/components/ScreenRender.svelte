@@ -12,9 +12,7 @@
 
   let camera: OrthographicCamera;
 
-
-
-  useFrame(( { renderer, scene}) => {
+  useFrame(({ renderer, scene }) => {
     if (!renderer) return;
     renderer.setRenderTarget($renderTarget);
     // composer.render()

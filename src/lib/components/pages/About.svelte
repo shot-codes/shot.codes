@@ -1,10 +1,13 @@
 <script lang="ts">
-  import { T } from "@threlte/core";
+  import { T, useTexture } from "@threlte/core";
 </script>
 
-<!-- <T.Group position={[0, 0, 0]} rotation.y={Math.PI / 2}>
-  <T.Mesh>
-    <T.SphereGeometry args={[1]} />
-    <T.MeshStandardMaterial color="#ff00ff" />
-  </T.Mesh>
-</T.Group> -->
+<T.Mesh position.x={-0.3}>
+  <T.PlaneGeometry />
+  <T.MeshBasicMaterial map={useTexture("/xp-sb.png")} />
+</T.Mesh>
+
+<T.Mesh position.x={0.4} position.y={-0.2}>
+  <T.PlaneGeometry />
+  <T.MeshBasicMaterial map={useTexture("/xp-image.png")} />
+</T.Mesh>

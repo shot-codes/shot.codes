@@ -18,7 +18,7 @@
       ["Monitor White Plastic"]: MeshStandardMaterial;
       ["Screen Surface"]: MeshStandardMaterial;
     };
-  }>("/monitor.glb");
+  }>("/monitor-sb.glb");
 
   $: nodes = $gltf?.nodes.Nodes;
   $: materials = $gltf?.materials;
@@ -36,18 +36,41 @@
     </T.Group>
   {/if}
 
+  <!-- Render Surface -->
   <T.Mesh position.y={0.51} position.z={-6.2} position.x={0.04}>
     <T.SphereGeometry
       args={[
         5.2,
         20,
         20,
-        0.999 * (8 * Math.PI) / 18,
-        1.01 * (2 * Math.PI) / 18,
+        (0.999 * (8 * Math.PI)) / 18,
+        (1.01 * (2 * Math.PI)) / 18,
         (1.02 * (2 * Math.PI)) / 5,
         (0.95 * Math.PI) / 10,
       ]}
     />
     <T.MeshBasicMaterial map={$renderTarget.texture} />
+  </T.Mesh>
+
+  <!-- Transparent Screen surface -->
+  <T.Mesh position.y={0.51} position.z={-6.18} position.x={0.04}>
+    <T.SphereGeometry
+      args={[
+        5.2,
+        20,
+        20,
+        (0.999 * (8 * Math.PI)) / 18,
+        (1.01 * (2 * Math.PI)) / 18,
+        (1.02 * (2 * Math.PI)) / 5,
+        (0.95 * Math.PI) / 10,
+      ]}
+    />
+    <T.MeshBasicMaterial
+      color="#ffffff"
+      transparent={true}
+      opacity={0.1}
+      roughness={0.5}
+      metalness={0.5}
+    />
   </T.Mesh>
 </T.Group>

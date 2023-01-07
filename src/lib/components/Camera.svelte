@@ -28,7 +28,7 @@
       $cameraPositionSpring[1],
       $cameraPositionSpring[2]
     );
-    cameraPosition = cameraPosition;
+    // cameraPosition = cameraPosition;
   }
 
   // TODO: Check aspect ratio, not absolute width
@@ -51,5 +51,5 @@
     lookAt={{ y: 0.8 }}
     position={cameraPosition}
   />
-  <!-- <OrbitControls target={{ y: 0.8 }} /> -->
+  <OrbitControls target={{ y: 0.8 }} />
 </T.PerspectiveCamera>

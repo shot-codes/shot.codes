@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+	height: 100%;
+	color: white;
+}
+
+@font-face {
+	font-family: 'Helvetica Neue';
+	src: url('/fonts/HelveticaNeue-Regular.ttf');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Instrument Serif';
+	src: url('/fonts/InstrumentSerif-Regular.ttf');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

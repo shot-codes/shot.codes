@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { clickOutside } from '$lib/utils/click_outside';
-	import { activeBackgroundColor, navBorderColor } from '$lib/stores';
+	import { activeBackgroundColor, navBorderColor, activeTextColor } from '$lib/stores';
+	import { slide } from 'svelte/transition';
 
 	export let collections: Array<string>;
 	export let posts: Array<string>;
 
 	enum Page {
-		Index = '→',
+		Index = 'index',
 		Photography = 'photography',
 		Projects = 'projects',
 		Games = 'games',
@@ -48,39 +49,33 @@
 </script>
 
 <nav
-	class="fixed bottom-0 flex h-[50px] w-full items-center border-t-[0.5px] p-2"
 	style:background-color={$activeBackgroundColor}
+	class="flex w-full items-center bg-opacity-0 px-2 font-title text-[40pt] backdrop-blur"
 >
-	<a href="/" class="hover:underline">shot.codes</a>
-	<p>/</p>
+	<a href="/" class:pointer-events-none={activePage == Page.Index} class="hover:underline"
+		>SHOT.CODES</a
+	>
+	{#if activePage != Page.Index}
+		/
+	{/if}
 	<div class="relative">
-		{#if activePage == Page.Index}
-			<button class="px-2 hover:underline" on:click={() => (pageNavOpen = true)}>
-				{activePage}
-			</button>
-		{:else}
-			<button on:click={() => (pageNavOpen = true)} class="hover:underline">{activePage}</button>
-		{/if}
+		<button
+			on:click={() => (pageNavOpen = true)}
+			class:pointer-events-none={pageNavOpen}
+			class="hover:underline">{activePage == Page.Index ? '' : activePage.toUpperCase()}</button
+		>
+
 		{#if pageNavOpen}
 			<div
+				transition:slide={{ duration: 400 }}
 				use:clickOutside
 				on:clickOutside={() => (pageNavOpen = false)}
-				style:background-color={$activeBackgroundColor}
-				style:border-color={$navBorderColor}
-				class="absolute bottom-0 z-10 -mx-[11px] -my-[9px] flex flex-col-reverse rounded-sm border-[1px] px-[10px] py-2"
+				style:color={$activeTextColor}
+				class="absolute top-[64px] z-10 flex flex-col leading-[35pt]"
 			>
-				{#if !(activePage == Page.Index)}
-					<a href="/{activePage}" on:click={() => (pageNavOpen = false)} class="hover:underline"
-						>{activePage}</a
-					>
-				{:else}
-					<a class="px-2 hover:underline" href="/" on:click={() => (pageNavOpen = false)}
-						>{activePage}</a
-					>
-				{/if}
 				{#each pageArray as page}
 					{#if !(page == activePage) && !(page == Page.Index)}
-						<a href="/{page}" class="hover:underline">{page}</a>
+						<a href="/{page.toLowerCase()}" class="hover:underline">{page.toUpperCase()}</a>
 					{/if}
 				{/each}
 			</div>
@@ -89,25 +84,29 @@
 	{#if inPhotoCollection}
 		<p>/</p>
 		<div class="relative">
-			<button class="hover:underline" on:click={() => (photoNavOpen = true)}>
-				{activePhotoCollection}
+			<button
+				class="hover:underline"
+				on:click={() => (photoNavOpen = true)}
+				class:pointer-events-none={photoNavOpen}
+			>
+				{activePhotoCollection.toUpperCase()}
 			</button>
 
 			{#if photoNavOpen}
 				<div
+					transition:slide={{ duration: 400 }}
 					use:clickOutside
 					on:clickOutside={() => (photoNavOpen = false)}
-					style:background-color={$activeBackgroundColor}
-					style:border-color={$navBorderColor}
-					class="absolute bottom-0 z-10 -mx-[11px] -my-[9px] flex flex-col-reverse rounded-sm border-[1px] px-[10px] py-2"
+					style:color={$activeTextColor}
+					class="absolute top-[64px] z-10 flex flex-col leading-[35pt]"
 				>
-					<a href="/photography/{activePhotoCollection}" class="hover:underline">
-						{activePhotoCollection}
-					</a>
-
 					{#each collections as collection}
 						{#if !(collection == activePhotoCollection)}
-							<a href="/photography/{collection}" class="hover:underline">{collection}</a>
+							<a
+								href="/photography/{collection}"
+								on:click={() => (photoNavOpen = false)}
+								class="hover:underline">{collection.toUpperCase()}</a
+							>
 						{/if}
 					{/each}
 				</div>

@@ -5,7 +5,6 @@
 html,
 body {
 	height: 100%;
-	color: white;
 }
 
 @font-face {
@@ -19,6 +18,22 @@ body {
 @font-face {
 	font-family: 'Instrument Serif';
 	src: url('/fonts/InstrumentSerif-Regular.ttf');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Heming';
+	src: url('/fonts/Heming Variable.ttf');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Humane';
+	src: url('/fonts/Humane.ttf');
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;

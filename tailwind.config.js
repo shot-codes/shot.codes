@@ -5,7 +5,9 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['Helvetica Neue'],
-				serif: ['Instrument Serif']
+				serif: ['Instrument Serif'],
+				mono: ['Heming'],
+				title: ['Humane']
 			}
 		}
 	},

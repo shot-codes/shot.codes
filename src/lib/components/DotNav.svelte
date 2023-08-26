@@ -2,7 +2,7 @@
 	import { goto } from '$app/navigation';
 </script>
 
-<div class="fixed bottom-4 right-[15px] flex space-x-2">
+<div class="fixed bottom-4 z-30 right-[15px] flex space-x-2">
 	<button
 		on:click={() => {
 			goto('/');

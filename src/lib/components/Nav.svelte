@@ -1,3 +1,17 @@
+<script lang="ts" context="module">
+	import { writable } from 'svelte/store';
+
+	export enum Page {
+		Index = 'index',
+		Photography = 'photography',
+		Projects = 'projects',
+		Games = 'games',
+		Blog = 'blog'
+	}
+
+	export const activePage = writable(Page.Index);
+</script>
+
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { clickOutside } from '$lib/utils/click_outside';
@@ -7,17 +21,8 @@
 	export let collections: Array<string>;
 	export let posts: Array<string>;
 
-	enum Page {
-		Index = 'index',
-		Photography = 'photography',
-		Projects = 'projects',
-		Games = 'games',
-		Blog = 'blog'
-	}
-
 	const pageArray: Page[] = Object.values(Page);
 
-	let activePage = Page.Index;
 	let pageNavOpen = false;
 	let photoNavOpen = false;
 	let inPhotoCollection = false;
@@ -32,19 +37,19 @@
 		if (documentStyle) {
 			pageNavOpen = false;
 			if ($page.url.href.endsWith('/')) {
-				activePage = Page.Index;
+				activePage.set(Page.Index);
 			}
 			if ($page.url.href.includes('photography')) {
-				activePage = Page.Photography;
+				activePage.set(Page.Photography);
 			}
 			if ($page.url.href.includes('projects')) {
-				activePage = Page.Projects;
+				activePage.set(Page.Projects);
 			}
 			if ($page.url.href.includes('games')) {
-				activePage = Page.Games;
+				activePage.set(Page.Games);
 			}
 			if ($page.url.href.includes('blog')) {
-				activePage = Page.Blog;
+				activePage.set(Page.Blog);
 			}
 
 			inPhotoCollection =
@@ -62,17 +67,17 @@
 </script>
 
 <nav class="z-50 flex w-full items-center px-2 font-title text-[40pt]">
-	<a href="/" class:pointer-events-none={activePage == Page.Index} class="hover:underline"
+	<a href="/" class:pointer-events-none={$activePage == Page.Index} class="hover:underline"
 		>SHOT.CODES</a
 	>
-	{#if activePage != Page.Index}
+	{#if $activePage != Page.Index}
 		/
 	{/if}
 	<div class="relative">
 		<button
 			on:click={() => (pageNavOpen = true)}
 			class:pointer-events-none={pageNavOpen}
-			class="hover:underline">{activePage == Page.Index ? '' : activePage.toUpperCase()}</button
+			class="hover:underline">{$activePage == Page.Index ? '' : $activePage.toUpperCase()}</button
 		>
 
 		{#if pageNavOpen}
@@ -83,7 +88,7 @@
 				class="absolute top-[64px] flex flex-col leading-[35pt]"
 			>
 				{#each pageArray as page}
-					{#if !(page == activePage) && !(page == Page.Index)}
+					{#if !(page == $activePage) && !(page == Page.Index)}
 						<a href="/{page.toLowerCase()}" class="hover:underline">{page.toUpperCase()}</a>
 					{/if}
 				{/each}

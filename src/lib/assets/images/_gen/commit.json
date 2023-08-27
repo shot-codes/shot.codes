@@ -1,63 +1,79 @@
 {
 	"huge": {
 		"credit": null,
-		"default": "/images/commit/_gen/huge-800.jpg?v=1693169378903",
+		"default": "/images/commit/_gen/huge-800.jpg?v=1693178439661",
 		"formats": {
 			"avif": {
-				"400": "/images/commit/_gen/huge-400.avif?v=1693169378903",
-				"800": "/images/commit/_gen/huge-800.avif?v=1693169378903"
+				"400": "/images/commit/_gen/huge-400.avif?v=1693178439661",
+				"800": "/images/commit/_gen/huge-800.avif?v=1693178439661",
+				"1200": "/images/commit/_gen/huge-1200.avif?v=1693178439661"
 			},
 			"webp": {
-				"400": "/images/commit/_gen/huge-400.webp?v=1693169378903",
-				"800": "/images/commit/_gen/huge-800.webp?v=1693169378903"
+				"400": "/images/commit/_gen/huge-400.webp?v=1693178439661",
+				"800": "/images/commit/_gen/huge-800.webp?v=1693178439661",
+				"1200": "/images/commit/_gen/huge-1200.webp?v=1693178439661"
 			},
 			"jpg": {
-				"400": "/images/commit/_gen/huge-400.jpg?v=1693169378903",
-				"800": "/images/commit/_gen/huge-800.jpg?v=1693169378903"
+				"400": "/images/commit/_gen/huge-400.jpg?v=1693178439661",
+				"800": "/images/commit/_gen/huge-800.jpg?v=1693178439661",
+				"1200": "/images/commit/_gen/huge-1200.jpg?v=1693178439661"
 			}
 		},
 		"placeholder": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoQAAsABUB8JYwC7AC6zZtowAD+GdddV6OvuxikJR7leJekuFgl0WhiIpJYwu6FekeP4tdrCJ2ZyGdI69f3aiAA",
 		"sizes": {
 			"400": {
-				"avif": "/images/commit/_gen/huge-400.avif?v=1693169378903",
-				"webp": "/images/commit/_gen/huge-400.webp?v=1693169378903",
-				"jpg": "/images/commit/_gen/huge-400.jpg?v=1693169378903"
+				"avif": "/images/commit/_gen/huge-400.avif?v=1693178439661",
+				"webp": "/images/commit/_gen/huge-400.webp?v=1693178439661",
+				"jpg": "/images/commit/_gen/huge-400.jpg?v=1693178439661"
 			},
 			"800": {
-				"avif": "/images/commit/_gen/huge-800.avif?v=1693169378903",
-				"webp": "/images/commit/_gen/huge-800.webp?v=1693169378903",
-				"jpg": "/images/commit/_gen/huge-800.jpg?v=1693169378903"
+				"avif": "/images/commit/_gen/huge-800.avif?v=1693178439661",
+				"webp": "/images/commit/_gen/huge-800.webp?v=1693178439661",
+				"jpg": "/images/commit/_gen/huge-800.jpg?v=1693178439661"
+			},
+			"1200": {
+				"avif": "/images/commit/_gen/huge-1200.avif?v=1693178439661",
+				"webp": "/images/commit/_gen/huge-1200.webp?v=1693178439661",
+				"jpg": "/images/commit/_gen/huge-1200.jpg?v=1693178439661"
 			}
 		}
 	},
 	"large": {
 		"credit": null,
-		"default": "/images/commit/_gen/large-800.jpg?v=1693169378903",
+		"default": "/images/commit/_gen/large-800.jpg?v=1693178439661",
 		"formats": {
 			"avif": {
-				"400": "/images/commit/_gen/large-400.avif?v=1693169378903",
-				"800": "/images/commit/_gen/large-800.avif?v=1693169378903"
+				"400": "/images/commit/_gen/large-400.avif?v=1693178439661",
+				"800": "/images/commit/_gen/large-800.avif?v=1693178439661",
+				"1200": "/images/commit/_gen/large-1200.avif?v=1693178439661"
 			},
 			"webp": {
-				"400": "/images/commit/_gen/large-400.webp?v=1693169378903",
-				"800": "/images/commit/_gen/large-800.webp?v=1693169378903"
+				"400": "/images/commit/_gen/large-400.webp?v=1693178439661",
+				"800": "/images/commit/_gen/large-800.webp?v=1693178439661",
+				"1200": "/images/commit/_gen/large-1200.webp?v=1693178439661"
 			},
 			"jpg": {
-				"400": "/images/commit/_gen/large-400.jpg?v=1693169378903",
-				"800": "/images/commit/_gen/large-800.jpg?v=1693169378903"
+				"400": "/images/commit/_gen/large-400.jpg?v=1693178439661",
+				"800": "/images/commit/_gen/large-800.jpg?v=1693178439661",
+				"1200": "/images/commit/_gen/large-1200.jpg?v=1693178439661"
 			}
 		},
 		"placeholder": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoQAAsABUB8JYwC7AD5NcB2NQAA/hnXXVejr7sX84l6mUbW3bC15mLCOfirDHPSi2j32soSQl56tJkwZ1WBGgAA",
 		"sizes": {
 			"400": {
-				"avif": "/images/commit/_gen/large-400.avif?v=1693169378903",
-				"webp": "/images/commit/_gen/large-400.webp?v=1693169378903",
-				"jpg": "/images/commit/_gen/large-400.jpg?v=1693169378903"
+				"avif": "/images/commit/_gen/large-400.avif?v=1693178439661",
+				"webp": "/images/commit/_gen/large-400.webp?v=1693178439661",
+				"jpg": "/images/commit/_gen/large-400.jpg?v=1693178439661"
 			},
 			"800": {
-				"avif": "/images/commit/_gen/large-800.avif?v=1693169378903",
-				"webp": "/images/commit/_gen/large-800.webp?v=1693169378903",
-				"jpg": "/images/commit/_gen/large-800.jpg?v=1693169378903"
+				"avif": "/images/commit/_gen/large-800.avif?v=1693178439661",
+				"webp": "/images/commit/_gen/large-800.webp?v=1693178439661",
+				"jpg": "/images/commit/_gen/large-800.jpg?v=1693178439661"
+			},
+			"1200": {
+				"avif": "/images/commit/_gen/large-1200.avif?v=1693178439661",
+				"webp": "/images/commit/_gen/large-1200.webp?v=1693178439661",
+				"jpg": "/images/commit/_gen/large-1200.jpg?v=1693178439661"
 			}
 		}
 	}

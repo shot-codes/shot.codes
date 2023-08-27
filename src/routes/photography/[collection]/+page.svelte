@@ -5,12 +5,18 @@
 	export let data: PageData;
 </script>
 
-<h1 class="absolute right-0 top-0">{data.collection}</h1>
-
-<div class="mt-[200px] flex flex-col">
-	{#each Object.values(data.collectionConfig) as set}
-		<figure>
-			<ImageSet {set} />
-		</figure>
-	{/each}
+<div class="my-[200px] flex flex-wrap justify-center gap-4">
+	{#key data.collectionConfig}
+		{#each Object.values(data.collectionConfig) as set}
+			<figure class="w-[400px]">
+				<ImageSet {set} />
+			</figure>
+		{/each}
+	{/key}
 </div>
+
+<style>
+	figure :global(.web-image-gen-img) {
+		width: 100%;
+	}
+</style>

@@ -7,6 +7,19 @@ body {
 	height: 100%;
 }
 
+:root {
+	--bg-home: #ffffff;
+	--text-home: #000000;
+	--bg-photography: #000000;
+	--text-photography: #ffffff;
+	--bg-projects: #0000ff;
+	--text-projects: #ffffff;
+	--bg-games: #ff0000;
+	--text-games: #ffffff;
+	--bg-blog: #ffff00;
+	--text-blog: #000000;
+}
+
 @font-face {
 	font-family: 'Helvetica Neue';
 	src: url('/fonts/HelveticaNeue-Regular.ttf');

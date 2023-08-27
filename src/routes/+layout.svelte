@@ -18,7 +18,7 @@
 </svelte:head>
 
 <div class="grid h-full grid-rows-[100px_1fr]">
-	<div class="h-full">
+	<div class="z-40 h-full">
 		<Navigation collections={data.photographyCollections} posts={data.blogPosts} />
 	</div>
 	<div class="z-20 p-2">

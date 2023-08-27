@@ -17,8 +17,6 @@
 
 	const pageArray: Page[] = Object.values(Page);
 
-	let activeBackgroundColor = '#ffffff';
-	let activeTextColor = '#000000';
 	let activePage = Page.Index;
 	let pageNavOpen = false;
 	let photoNavOpen = false;
@@ -35,28 +33,18 @@
 			pageNavOpen = false;
 			if ($page.url.href.endsWith('/')) {
 				activePage = Page.Index;
-				activeBackgroundColor = documentStyle.getPropertyValue('--bg-home');
-				activeTextColor = documentStyle.getPropertyValue('--text-home');
 			}
 			if ($page.url.href.includes('photography')) {
 				activePage = Page.Photography;
-				activeBackgroundColor = documentStyle.getPropertyValue('--bg-photography');
-				activeTextColor = documentStyle.getPropertyValue('--text-photography');
 			}
 			if ($page.url.href.includes('projects')) {
 				activePage = Page.Projects;
-				activeBackgroundColor = documentStyle.getPropertyValue('--bg-projects');
-				activeTextColor = documentStyle.getPropertyValue('--text-projects');
 			}
 			if ($page.url.href.includes('games')) {
 				activePage = Page.Games;
-				activeBackgroundColor = documentStyle.getPropertyValue('--bg-games');
-				activeTextColor = documentStyle.getPropertyValue('--text-games');
 			}
 			if ($page.url.href.includes('blog')) {
 				activePage = Page.Blog;
-				activeBackgroundColor = documentStyle.getPropertyValue('--bg-blog');
-				activeTextColor = documentStyle.getPropertyValue('--text-blog');
 			}
 
 			inPhotoCollection =
@@ -73,10 +61,7 @@
 	}
 </script>
 
-<nav
-	style:background-color={activeBackgroundColor}
-	class="flex w-full items-center bg-opacity-0 px-2 font-title text-[40pt] backdrop-blur"
->
+<nav class="z-50 flex w-full items-center px-2 font-title text-[40pt]">
 	<a href="/" class:pointer-events-none={activePage == Page.Index} class="hover:underline"
 		>SHOT.CODES</a
 	>
@@ -95,8 +80,7 @@
 				transition:slide={{ duration: 400 }}
 				use:clickOutside
 				on:clickOutside={() => (pageNavOpen = false)}
-				style:color={activeTextColor}
-				class="absolute top-[64px] z-10 flex flex-col leading-[35pt]"
+				class="absolute top-[64px] flex flex-col leading-[35pt]"
 			>
 				{#each pageArray as page}
 					{#if !(page == activePage) && !(page == Page.Index)}
@@ -122,8 +106,7 @@
 					transition:slide={{ duration: 400 }}
 					use:clickOutside
 					on:clickOutside={() => (photoNavOpen = false)}
-					style:color={activeTextColor}
-					class="absolute top-[64px] z-10 flex flex-col leading-[35pt]"
+					class="absolute top-[64px] flex flex-col leading-[35pt]"
 				>
 					{#each collections as collection}
 						{#if !(collection == activePhotoCollection)}

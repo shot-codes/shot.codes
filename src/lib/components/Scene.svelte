@@ -18,9 +18,9 @@
 
 	const updatePointer = (event: MouseEvent) => {
 		const centerX = window.innerWidth / 2;
-		const centerY = window.innerHeight / 2;
+		const centerY = (window.innerHeight * 1) / 5;
 		const x = (event.clientX - centerX) / centerX;
-		const y = (event.clientY - centerY) / centerY;
+		const y = (event.clientY - centerY) / (centerY * 3);
 		pointer = { x, y };
 	};
 
@@ -37,7 +37,13 @@
 	<T.DirectionalLight position={[10, 8, 15]} intensity={1.5} />
 	<T.AmbientLight intensity={0.2} />
 
-	<T.Group rotation={$eyeRotation} position={[0, 10, 0]}>
-		<Eyeball scale={0.3} rotation={[0, 180 * DEG2RAD, 0]} />
+	<T.Group position={[0, 60, 0]}>
+		<T.Group rotation={$eyeRotation} position={[15, 0, 0]}>
+			<Eyeball scale={0.1} rotation={[0, 180 * DEG2RAD, 0]} />
+		</T.Group>
+
+		<T.Group rotation={$eyeRotation} position={[-15, 0, 0]}>
+			<Eyeball scale={0.1} rotation={[0, 180 * DEG2RAD, 0]} />
+		</T.Group>
 	</T.Group>
 </Canvas>

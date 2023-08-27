@@ -1,17 +1,17 @@
 import type { PageServerLoad } from './$types';
-import { readdirSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 
 export const load = (({ params }) => {
-	let images: Array<string> = [];
+	let collectionConfig;
 	try {
-		const files = readdirSync(`./static/images/${params.collection}`);
-		images = files;
+		const data = readFileSync(`./src/lib/assets/images/_gen/${params.collection}.json`, 'utf-8');
+		collectionConfig = JSON.parse(data);
 	} catch (error) {
 		console.error('Error occurred while reading directory:', error);
 	}
 
 	return {
 		collection: params.collection,
-		images
+		collectionConfig
 	};
 }) satisfies PageServerLoad;

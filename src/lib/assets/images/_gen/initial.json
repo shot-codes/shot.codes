@@ -1,0 +1,64 @@
+{
+	"small": {
+		"credit": null,
+		"default": "/images/initial/_gen/small-800.jpg?v=1693169378903",
+		"formats": {
+			"avif": {
+				"400": "/images/initial/_gen/small-400.avif?v=1693169378903",
+				"800": "/images/initial/_gen/small-800.avif?v=1693169378903"
+			},
+			"webp": {
+				"400": "/images/initial/_gen/small-400.webp?v=1693169378903",
+				"800": "/images/initial/_gen/small-800.webp?v=1693169378903"
+			},
+			"jpg": {
+				"400": "/images/initial/_gen/small-400.jpg?v=1693169378903",
+				"800": "/images/initial/_gen/small-800.jpg?v=1693169378903"
+			}
+		},
+		"placeholder": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAQCdASoQABAABUB8JZACdAYu5AVAAP7rivc+AEEuQzBp1NWNp9lRVn3CYlRex93rSOzGpuRRUlczqc6OXzJ6yBUv4pDJmmD1Vysk3O0pdxwqh9m1PDG40DJ5zsAA",
+		"sizes": {
+			"400": {
+				"avif": "/images/initial/_gen/small-400.avif?v=1693169378903",
+				"webp": "/images/initial/_gen/small-400.webp?v=1693169378903",
+				"jpg": "/images/initial/_gen/small-400.jpg?v=1693169378903"
+			},
+			"800": {
+				"avif": "/images/initial/_gen/small-800.avif?v=1693169378903",
+				"webp": "/images/initial/_gen/small-800.webp?v=1693169378903",
+				"jpg": "/images/initial/_gen/small-800.jpg?v=1693169378903"
+			}
+		}
+	},
+	"tiny": {
+		"credit": null,
+		"default": "/images/initial/_gen/tiny-800.jpg?v=1693169378903",
+		"formats": {
+			"avif": {
+				"400": "/images/initial/_gen/tiny-400.avif?v=1693169378903",
+				"800": "/images/initial/_gen/tiny-800.avif?v=1693169378903"
+			},
+			"webp": {
+				"400": "/images/initial/_gen/tiny-400.webp?v=1693169378903",
+				"800": "/images/initial/_gen/tiny-800.webp?v=1693169378903"
+			},
+			"jpg": {
+				"400": "/images/initial/_gen/tiny-400.jpg?v=1693169378903",
+				"800": "/images/initial/_gen/tiny-800.jpg?v=1693169378903"
+			}
+		},
+		"placeholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAACQAgCdASoQABAABUB8JbACdH8D2SQVilGlxm3PAAD+7Nk/7eU+XjzH18K4TyCWekFJtg3hfbTx6aofBgvw29f159ymhACUs5M2Med6axPGs6/LlKqZzns6/+zQFtv2lLk+Qr0Df+IVWmHoqA3WUfa3vf6D8ezwq6Ia4jUjwIB0lAAA",
+		"sizes": {
+			"400": {
+				"avif": "/images/initial/_gen/tiny-400.avif?v=1693169378903",
+				"webp": "/images/initial/_gen/tiny-400.webp?v=1693169378903",
+				"jpg": "/images/initial/_gen/tiny-400.jpg?v=1693169378903"
+			},
+			"800": {
+				"avif": "/images/initial/_gen/tiny-800.avif?v=1693169378903",
+				"webp": "/images/initial/_gen/tiny-800.webp?v=1693169378903",
+				"jpg": "/images/initial/_gen/tiny-800.jpg?v=1693169378903"
+			}
+		}
+	}
+}

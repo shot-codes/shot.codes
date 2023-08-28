@@ -21,27 +21,27 @@
 	let pointerOffset = 0;
 
 	const update = (route: string | null) => {
-		switch (route) {
-			case '/':
-				$activePage = Page.Index;
-				pointerOffset = 50;
-				break;
-			case '/photography':
-				$activePage = Page.Photography;
-				pointerOffset = 105;
-				break;
-			case '/projects':
-				$activePage = Page.Projects;
-				pointerOffset = 160;
-				break;
-			case '/games':
-				$activePage = Page.Games;
-				pointerOffset = 215;
-				break;
-			case '/blog':
-				$activePage = Page.Blog;
-				pointerOffset = 270;
-				break;
+		if (route == null) return;
+
+		if (route == '/') {
+			$activePage = Page.Index;
+			pointerOffset = 50;
+		}
+		if (route.includes('/photography')) {
+			$activePage = Page.Photography;
+			pointerOffset = 105;
+		}
+		if (route.includes('/projects')) {
+			$activePage = Page.Projects;
+			pointerOffset = 160;
+		}
+		if (route.includes('/games')) {
+			$activePage = Page.Games;
+			pointerOffset = 215;
+		}
+		if (route.includes('/blog')) {
+			$activePage = Page.Blog;
+			pointerOffset = 270;
 		}
 	};
 

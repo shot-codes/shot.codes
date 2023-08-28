@@ -3,8 +3,6 @@
 	import '../app.css';
 	import Navigation from '$lib/components/Nav.svelte';
 	import DotNav from '$lib/components/DotNav.svelte';
-	import Scene from '$lib/components/Scene.svelte';
-	import { dev } from '$app/environment';
 
 	export let data: LayoutData;
 </script>
@@ -26,12 +24,6 @@
 		<slot />
 	</div>
 </div>
-
-{#if !dev}
-	<div class="pointer-events-none absolute left-0 top-0 z-10 h-full w-full">
-		<Scene />
-	</div>
-{/if}
 
 <div class="z-30">
 	<DotNav />

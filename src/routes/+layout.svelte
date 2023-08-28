@@ -1,10 +1,7 @@
 <script lang="ts">
-	import type { LayoutData } from './$types';
 	import '../app.css';
-	import Navigation from '$lib/components/Nav.svelte';
-	import DotNav from '$lib/components/DotNav.svelte';
-
-	export let data: LayoutData;
+	import TitleBar from '$lib/components/TitleBar.svelte';
+	import Nav from '$lib/components/Nav.svelte';
 </script>
 
 <svelte:head>
@@ -16,15 +13,13 @@
 	</style>
 </svelte:head>
 
-<div class="grid h-full grid-rows-[100px_1fr]">
-	<div class="z-40 h-full">
-		<Navigation collections={data.photographyCollections} posts={data.blogPosts} />
-	</div>
+<div class="grid h-full grid-rows-[40px_1fr]">
+	<TitleBar />
 	<div class="z-20 p-2">
 		<slot />
 	</div>
 </div>
 
 <div class="z-30">
-	<DotNav />
+	<Nav />
 </div>

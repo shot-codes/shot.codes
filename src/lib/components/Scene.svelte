@@ -5,6 +5,7 @@
 	import { DEG2RAD } from 'three/src/math/MathUtils';
 	import Eyeball from '$lib/models/Scene.svelte';
 	import { type Spring, spring } from 'svelte/motion';
+	import { page } from '$app/stores';
 
 	export let pointerOffset = 0;
 
@@ -18,11 +19,16 @@
 		eyeRotation.set([0 + pointer.y, 0 + pointer.x, 0]);
 	}
 
+	$: {
+		$page;
+		eyeRotation.set([0, 0, 0]);
+	}
+
 	const updatePointer = (event: MouseEvent) => {
 		const centerX = window.innerWidth - 320 + pointerOffset;
-		const centerY = window.innerHeight - 50;
-		const x = (event.clientX - centerX) / (centerX * 1.5);
-		const y = (event.clientY - centerY) / (centerY * 1.5);
+		const centerY = window.innerHeight - 40;
+		const x = (event.clientX - centerX) / (window.innerWidth * 1.2);
+		const y = (event.clientY - centerY) / (window.innerHeight * 1.2);
 		pointer = { x, y };
 	};
 
@@ -38,7 +44,7 @@
 <Canvas>
 	<T.PerspectiveCamera makeDefault position={[0, 0, 200]} fov={50} />
 	<T.DirectionalLight position={[10, 8, 15]} intensity={1.5} />
-	<T.AmbientLight intensity={0.2} />
+	` <T.AmbientLight intensity={0.2} />
 
 	<T.Group rotation={$eyeRotation} position={[0, 0, 0]}>
 		<Eyeball scale={0.47} rotation={[0, 180 * DEG2RAD, 0]} />

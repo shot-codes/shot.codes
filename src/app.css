@@ -8,15 +8,20 @@ body {
 }
 
 :root {
+	--bg-nav-home: #ffffff;
 	--bg-home: #ffffff;
 	--text-home: #000000;
+	--bg-nav-photography: #000000;
 	--bg-photography: #000000;
 	--text-photography: #ffffff;
-	--bg-projects: #0000ff;
+	--bg-nav-projects: #0000ff;
+	--bg-projects: #ccccff;
 	--text-projects: #ffffff;
-	--bg-games: #ff0000;
+	--bg-nav-games: #ff0000;
+	--bg-games: #ffcccc;
 	--text-games: #ffffff;
-	--bg-blog: #ffff00;
+	--bg-nav-blog: #ffff00;
+	--bg-blog: #ffffaa;
 	--text-blog: #000000;
 }
 

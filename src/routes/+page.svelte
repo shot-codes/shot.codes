@@ -1,14 +1,20 @@
 <a
 	href="photography"
-	class="fixed bottom-[110px] right-[190px] mx-2 rotate-45 transform hover:underline">PHOTOGRAPHY</a
+	class="fixed bottom-[110px] right-[190px] mx-2 rotate-45 transform font-mono hover:underline"
+	>PHOTOGRAPHY</a
 >
 <a
 	href="projects"
-	class="fixed bottom-[98px] right-[140px] mx-2 rotate-45 transform hover:underline">PROJECTS</a
+	class="fixed bottom-[98px] right-[135px] mx-2 rotate-45 transform font-mono hover:underline"
+	>PROJECTS</a
 >
-<a href="games" class="fixed bottom-[88px] right-[88px] mx-2 rotate-45 transform hover:underline"
+<a
+	href="games"
+	class="fixed bottom-[88px] right-[80px] mx-2 rotate-45 transform font-mono hover:underline"
 	>GAMES</a
 >
-<a href="blog" class="fixed bottom-[84px] right-[35px] mx-2 rotate-45 transform hover:underline"
+<a
+	href="blog"
+	class="fixed bottom-[84px] right-[25px] mx-2 rotate-45 transform font-mono hover:underline"
 	>BLOG</a
 >

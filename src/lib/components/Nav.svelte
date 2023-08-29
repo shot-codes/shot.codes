@@ -73,6 +73,7 @@
 		class:opacity-0={$activePage == Page.Index}
 		disabled={$activePage == Page.Index}
 		class="h-12 w-12 rounded-full bg-[var(--bg-nav-home)]"
+		aria-label="link to index"
 	/>
 	<button
 		on:click={() => {
@@ -81,6 +82,7 @@
 		class:opacity-0={$activePage == Page.Photography}
 		disabled={$activePage == Page.Photography}
 		class="h-12 w-12 rounded-full bg-[var(--bg-nav-photography)]"
+		aria-label="link to photography"
 	/>
 	<button
 		on:click={() => {
@@ -89,6 +91,7 @@
 		class:opacity-0={$activePage == Page.Projects}
 		disabled={$activePage == Page.Projects}
 		class="h-12 w-12 rounded-full bg-[var(--bg-nav-projects)]"
+		aria-label="link to projects"
 	/>
 	<button
 		on:click={() => {
@@ -97,6 +100,7 @@
 		class:opacity-0={$activePage == Page.Games}
 		disabled={$activePage == Page.Games}
 		class="h-12 w-12 rounded-full bg-[var(--bg-nav-games)]"
+		aria-label="link to games"
 	/>
 	<button
 		on:click={() => {
@@ -105,5 +109,6 @@
 		class:opacity-0={$activePage == Page.Blog}
 		disabled={$activePage == Page.Blog}
 		class="h-12 w-12 rounded-full bg-[var(--bg-nav-blog)]"
+		aria-label="link to blog"
 	/>
 </div>

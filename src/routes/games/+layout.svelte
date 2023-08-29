@@ -1,4 +1,5 @@
 <svelte:head>
+	<title>shot.codes/games</title>
 	<style>
 		html {
 			background-color: var(--bg-games);

@@ -4,9 +4,14 @@
 	let text = '';
 	let targetText = '';
 
-	$: {
-		targetText = $activePage;
-	}
+	// $: {
+	// 	targetText = $activePage;
+	// 	while (text != targetText) {
+	//      setTimeout(() => {
+	//        console.log(targetText);
+	//      }, 1000)
+	// 	}
+	// }
 </script>
 
 <span>

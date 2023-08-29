@@ -1,20 +1,18 @@
-<a
-	href="photography"
-	class="fixed bottom-[110px] right-[190px] mx-2 rotate-45 transform font-mono hover:underline"
-	>PHOTOGRAPHY</a
->
-<a
-	href="projects"
-	class="fixed bottom-[98px] right-[135px] mx-2 rotate-45 transform font-mono hover:underline"
-	>PROJECTS</a
->
-<a
-	href="games"
-	class="fixed bottom-[88px] right-[80px] mx-2 rotate-45 transform font-mono hover:underline"
-	>GAMES</a
->
-<a
-	href="blog"
-	class="fixed bottom-[84px] right-[25px] mx-2 rotate-45 transform font-mono hover:underline"
-	>BLOG</a
->
+<svelte:head>
+	<title>shot.codes</title>
+</svelte:head>
+
+<ul class="font-mono">
+	<li class="fixed bottom-[150px] right-[165px] w-64 rotate-45 transform text-right">
+		<a href="photography" class="mx-2 hover:underline"> PHOTOGRAPHY </a>
+	</li>
+	<li class="fixed bottom-[150px] right-[110px] w-64 rotate-45 transform text-right">
+		<a href="projects" class="mx-2 hover:underline"> PROJECTS </a>
+	</li>
+	<li class="fixed bottom-[150px] right-[55px] w-64 rotate-45 transform text-right">
+		<a href="games" class="mx-2 hover:underline"> GAMES </a>
+	</li>
+	<li class="fixed bottom-[150px] right-[0px] w-64 rotate-45 transform text-right">
+		<a href="blog" class="mx-2 hover:underline"> BLOG </a>
+	</li>
+</ul>

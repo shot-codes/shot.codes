@@ -6,6 +6,7 @@
 </script>
 
 <svelte:head>
+	<title>shot.codes/photography</title>
 	<style>
 		html {
 			background-color: var(--bg-photography);

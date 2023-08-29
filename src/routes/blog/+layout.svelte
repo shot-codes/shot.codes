@@ -1,4 +1,5 @@
 <svelte:head>
+	<title>shot.codes/blog</title>
 	<style>
 		html {
 			background-color: var(--bg-blog);

@@ -20,7 +20,7 @@
 		background-color: var(--bg-home);
 	}
 	.photography {
-		@apply bg-black bg-opacity-10 backdrop-blur-lg;
+		@apply bg-black bg-opacity-50 backdrop-blur-lg;
 	}
 	.projects {
 		background-color: var(--bg-projects);

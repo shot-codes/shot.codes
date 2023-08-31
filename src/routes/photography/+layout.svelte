@@ -16,12 +16,13 @@
 </svelte:head>
 
 <div class="flex items-end px-10 pb-20 pt-10">
-	<div class="flex h-full w-full flex-wrap items-end justify-center space-y-2">
+	<div class="flex h-full w-full flex-wrap items-end justify-center space-x-4 space-y-2">
 		{#each data.photographyCollections as collection}
 			<a
 				href="/photography/{collection}"
-				class="mx-2 hover:underline"
+				class="hover:underline"
 				class:italic={$page.url.href.includes(collection)}
+				class:font-bold={$page.url.href.includes(collection)}
 			>
 				{collection.toUpperCase()}
 			</a>

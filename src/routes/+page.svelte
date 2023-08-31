@@ -2,7 +2,7 @@
 	<title>shot.codes</title>
 </svelte:head>
 
-<ul class="font-mono">
+<ul>
 	<li class="fixed bottom-[150px] right-[165px] w-64 rotate-45 transform text-right">
 		<a href="photography" class="mx-2 hover:underline"> PHOTOGRAPHY </a>
 	</li>

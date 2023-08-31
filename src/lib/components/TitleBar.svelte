@@ -1,12 +1,22 @@
 <script lang="ts">
 	import { Page, activePage } from './Nav.svelte';
 	import Typewriter from './Typewriter.svelte';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		const worker = new Worker('../utils/myWorker.js');
+
+		worker.onmessage = function (e) {
+			console.log('Message received from worker:', e.data);
+			worker.postMessage('Hello, world!');
+		};
+	});
 </script>
 
 <div />
 
 <div
-	class="fixed z-50 flex w-full justify-center py-2 font-mono text-[20pt]"
+	class="fixed z-50 flex w-full justify-center py-2 text-[20pt]"
 	class:index={$activePage == Page.Index}
 	class:photography={$activePage == Page.Photography}
 	class:projects={$activePage == Page.Projects}

@@ -19,7 +19,7 @@ body {
 	--text-projects: #ffffff;
 	--bg-nav-games: #ff0000;
 	--bg-games: #ffcccc;
-	--text-games: #ffffff;
+	--text-games: #ff0000;
 	--bg-nav-blog: #ffff00;
 	--bg-blog: #ffffaa;
 	--text-blog: #000000;
@@ -35,32 +35,23 @@ body {
 }
 
 @font-face {
-	font-family: 'Helvetica Neue';
-	src: url('/fonts/HelveticaNeue-Regular.ttf');
+	font-family: 'Iosevka Sans';
+	src: url('/fonts/iosevka-web-sans.woff2');
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
-	font-family: 'Instrument Serif';
-	src: url('/fonts/InstrumentSerif-Regular.ttf');
+	font-family: 'Iosevka Serif';
+	src: url('/fonts/iosevka-web-serif.woff2');
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
 }
-
 @font-face {
 	font-family: 'Heming';
 	src: url('/fonts/Heming Variable.ttf');
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Humane';
-	src: url('/fonts/Humane.ttf');
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;

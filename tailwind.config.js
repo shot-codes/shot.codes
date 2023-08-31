@@ -4,9 +4,9 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Helvetica Neue'],
-				serif: ['Instrument Serif'],
-				mono: ['Heming'],
+				sans: ['Iosevka Sans'],
+				serif: ['Iosevka Serif'],
+				mono: ['Iosevka Serif'],
 				title: ['Humane']
 			}
 		}

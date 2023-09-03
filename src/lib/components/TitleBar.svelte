@@ -1,30 +1,54 @@
 <script lang="ts">
 	import { Page, activePage } from './Nav.svelte';
-	import Typewriter from './Typewriter.svelte';
 	import { onMount } from 'svelte';
 
-	onMount(() => {
-		// const worker = new Worker('../utils/myWorker.js');
-		//
-		// worker.onmessage = function (e) {
-		// 	console.log('Message received from worker:', e.data);
-		// 	worker.postMessage('Hello, world!');
-		// };
+	let syncWorker: Worker | undefined = undefined;
+	let text = '';
+	let scrollY = 0;
+
+	onMount(async () => {
+		const SyncWorker = await import('$lib/utils/title.worker?worker');
+		syncWorker = new SyncWorker.default();
+		syncWorker.onmessage = (event: MessageEvent) => {
+			text = event.data;
+		};
 	});
+
+	$: {
+		switch ($activePage) {
+			case Page.Index:
+				syncWorker?.postMessage('');
+				break;
+			case Page.Photography:
+				syncWorker?.postMessage('/photography');
+				break;
+			case Page.Projects:
+				syncWorker?.postMessage('/projects');
+				break;
+			case Page.Blog:
+				syncWorker?.postMessage('/blog');
+				break;
+			case Page.Contact:
+				syncWorker?.postMessage('/contact');
+				break;
+		}
+	}
 </script>
+
+<svelte:window bind:scrollY />
 
 <div />
 
 <div
 	class="fixed z-50 flex w-full justify-center py-2 text-[20pt]"
-	class:index={$activePage == Page.Index}
-	class:photography={$activePage == Page.Photography}
-	class:projects={$activePage == Page.Projects}
-	class:blog={$activePage == Page.Blog}
-	class:contact={$activePage == Page.Contact}
+	class:index={$activePage == Page.Index && scrollY > 0}
+	class:photography={$activePage == Page.Photography && scrollY > 0}
+	class:projects={$activePage == Page.Projects && scrollY > 0}
+	class:blog={$activePage == Page.Blog && scrollY > 0}
+	class:contact={$activePage == Page.Contact && scrollY > 0}
 >
-	<span>shot.codes/photography</span>
-	<span><Typewriter /></span>
+	<a href="/">shot.codes</a>
+	<span>{text}</span>
 </div>
 
 <style lang="postcss">

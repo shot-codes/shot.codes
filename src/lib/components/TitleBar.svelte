@@ -4,12 +4,12 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		const worker = new Worker('../utils/myWorker.js');
-
-		worker.onmessage = function (e) {
-			console.log('Message received from worker:', e.data);
-			worker.postMessage('Hello, world!');
-		};
+		// const worker = new Worker('../utils/myWorker.js');
+		//
+		// worker.onmessage = function (e) {
+		// 	console.log('Message received from worker:', e.data);
+		// 	worker.postMessage('Hello, world!');
+		// };
 	});
 </script>
 

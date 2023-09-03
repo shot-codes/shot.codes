@@ -6,6 +6,7 @@
 </script>
 
 <svelte:head>
+  <meta name="homepage">
 	<style>
 		html {
 			background-color: var(--bg-home);

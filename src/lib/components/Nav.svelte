@@ -5,8 +5,8 @@
 		Index = 'index',
 		Photography = 'photography',
 		Projects = 'projects',
-		Games = 'games',
-		Blog = 'blog'
+		Blog = 'blog',
+		Contact = 'contact'
 	}
 
 	export const activePage = writable(Page.Index);
@@ -35,13 +35,13 @@
 			$activePage = Page.Projects;
 			pointerOffset = 160;
 		}
-		if (route.includes('/games')) {
-			$activePage = Page.Games;
-			pointerOffset = 215;
-		}
 		if (route.includes('/blog')) {
 			$activePage = Page.Blog;
 			pointerOffset = 270;
+		}
+		if (route.includes('/contact')) {
+			$activePage = Page.Contact;
+			pointerOffset = 215;
 		}
 	};
 
@@ -59,8 +59,8 @@
 	class:right-[223px]={$activePage == Page.Index}
 	class:right-[167px]={$activePage == Page.Photography}
 	class:right-[111px]={$activePage == Page.Projects}
-	class:right-[55px]={$activePage == Page.Games}
-	class:right-[-1px]={$activePage == Page.Blog}
+	class:right-[55px]={$activePage == Page.Blog}
+	class:right-[-1px]={$activePage == Page.Contact}
 >
 	<Scene {pointerOffset} />
 </div>
@@ -93,15 +93,7 @@
 		class="h-12 w-12 rounded-full bg-[var(--bg-nav-projects)]"
 		aria-label="link to projects"
 	/>
-	<button
-		on:click={() => {
-			goto('/games');
-		}}
-		class:opacity-0={$activePage == Page.Games}
-		disabled={$activePage == Page.Games}
-		class="h-12 w-12 rounded-full bg-[var(--bg-nav-games)]"
-		aria-label="link to games"
-	/>
+
 	<button
 		on:click={() => {
 			goto('/blog');
@@ -110,5 +102,14 @@
 		disabled={$activePage == Page.Blog}
 		class="h-12 w-12 rounded-full bg-[var(--bg-nav-blog)]"
 		aria-label="link to blog"
+	/>
+	<button
+		on:click={() => {
+			goto('/contact');
+		}}
+		class:opacity-0={$activePage == Page.Contact}
+		disabled={$activePage == Page.Contact}
+		class="h-12 w-12 rounded-full bg-[var(--bg-nav-contact)]"
+		aria-label="link to contact"
 	/>
 </div>

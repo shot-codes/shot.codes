@@ -20,10 +20,10 @@
 	class:index={$activePage == Page.Index}
 	class:photography={$activePage == Page.Photography}
 	class:projects={$activePage == Page.Projects}
-	class:games={$activePage == Page.Games}
 	class:blog={$activePage == Page.Blog}
+	class:contact={$activePage == Page.Contact}
 >
-	<span>shot.codes/</span>
+	<span>shot.codes/photography</span>
 	<span><Typewriter /></span>
 </div>
 
@@ -37,10 +37,10 @@
 	.projects {
 		background-color: var(--bg-projects);
 	}
-	.games {
-		background-color: var(--bg-games);
-	}
 	.blog {
 		background-color: var(--bg-blog);
+	}
+	.contact {
+		background-color: var(--bg-contact);
 	}
 </style>

@@ -17,7 +17,7 @@ export const load = (async () => {
 	let blogPosts: Array<string> = [];
 	try {
 		const files = readdirSync('./static/posts/');
-		blogPosts = files;
+		blogPosts = files.map((str) => str.slice(0, -3));
 	} catch (error) {
 		console.error('Error occurred while reading directory:', error);
 	}

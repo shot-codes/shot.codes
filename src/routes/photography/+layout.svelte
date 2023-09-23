@@ -16,7 +16,7 @@
 </svelte:head>
 
 <div class="flex items-end px-10 pb-20 pt-24">
-	<div class="flex h-full w-full flex-wrap items-end justify-center space-y-2">
+	<div class="flex h-full w-full flex-wrap items-end justify-center">
 		{#each data.photographyCollections as collection}
 			<a
 				href="/photography/{collection}"

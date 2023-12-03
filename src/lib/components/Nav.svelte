@@ -37,11 +37,11 @@
 		}
 		if (route.includes('/blog')) {
 			$activePage = Page.Blog;
-			pointerOffset = 270;
+			pointerOffset = 215;
 		}
 		if (route.includes('/contact')) {
 			$activePage = Page.Contact;
-			pointerOffset = 215;
+			pointerOffset = 260;
 		}
 	};
 
@@ -54,15 +54,22 @@
 	});
 </script>
 
-<div
-	class="pointer-events-none fixed bottom-0 z-30 h-20 w-20"
-	class:right-[223px]={$activePage == Page.Index}
-	class:right-[167px]={$activePage == Page.Photography}
-	class:right-[111px]={$activePage == Page.Projects}
-	class:right-[55px]={$activePage == Page.Blog}
-	class:right-[-1px]={$activePage == Page.Contact}
->
-	<Scene {pointerOffset} />
+<div class="pointer-events-none fixed bottom-4 right-[15px] z-50 flex space-x-2">
+	<div class="h-12 w-12">
+		<Scene {pointerOffset} />
+	</div>
+	{#if $activePage == Page.Index}
+		<div class="h-12 w-12" />
+	{/if}
+	{#if $activePage == Page.Index || $activePage == Page.Photography}
+		<div class="h-12 w-12" />
+	{/if}
+	{#if $activePage == Page.Index || $activePage == Page.Photography || $activePage == Page.Projects}
+		<div class="h-12 w-12" />
+	{/if}
+	{#if $activePage == Page.Index || $activePage == Page.Photography || $activePage == Page.Projects || $activePage == Page.Blog}
+		<div class="h-12 w-12" />
+	{/if}
 </div>
 
 <div class="fixed bottom-4 right-[15px] z-40 flex space-x-2">

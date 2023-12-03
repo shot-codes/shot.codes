@@ -42,9 +42,9 @@
 </script>
 
 <Canvas>
-	<T.PerspectiveCamera makeDefault position={[0, 0, 200]} fov={50} />
+	<T.PerspectiveCamera makeDefault position={[0, 0, 200]} fov={32} />
 	<T.DirectionalLight position={[10, 8, 15]} intensity={1.5} />
-	` <T.AmbientLight intensity={0.2} />
+	<T.AmbientLight intensity={0.2} />
 
 	<T.Group rotation={$eyeRotation} position={[0, 0, 0]}>
 		<Eyeball scale={0.47} rotation={[0, 180 * DEG2RAD, 0]} />

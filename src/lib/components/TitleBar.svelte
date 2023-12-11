@@ -40,7 +40,7 @@
 <div />
 
 <div
-	class="fixed z-50 flex w-full justify-center py-2 text-[20pt]"
+	class="fixed z-50 flex w-full justify-center py-1 text-[16pt]"
 	class:index={$activePage == Page.Index && scrollY > 0}
 	class:photography={$activePage == Page.Photography && scrollY > 0}
 	class:projects={$activePage == Page.Projects && scrollY > 0}

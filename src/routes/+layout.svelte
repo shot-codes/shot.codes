@@ -15,7 +15,7 @@
 	</style>
 </svelte:head>
 
-<div class="grid h-full grid-rows-[40px_1fr]">
+<div class="grid h-full grid-rows-[30px_1fr]">
 	<TitleBar />
 	<div class="z-20 p-2">
 		<ul class=" mt-6 flex flex-wrap justify-center">

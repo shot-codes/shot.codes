@@ -8,12 +8,12 @@ body {
 }
 
 :root {
-	--bg-nav-home: #ffffff;
-	--bg-home: #ffffff;
-	--text-home: #000000;
+	--bg-nav-home: #00cf00;
+	--bg-home: #efffef;
+	--text-home: #004000;
 	--bg-nav-photography: #000000;
-	--bg-photography: #000000;
-	--text-photography: #ffffff;
+	--bg-photography: #ffffff;
+	--text-photography: #000000;
 	--bg-nav-projects: #0000ff;
 	--bg-projects: #ccccff;
 	--text-projects: #2020ff;
@@ -23,6 +23,26 @@ body {
 	--bg-nav-blog: #ffff00;
 	--bg-blog: #ffffee;
 	--text-blog: #4e2e00;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg-nav-home: #00cf00;
+		--bg-home: #001000;
+		--text-home: #afffaf;
+		--bg-nav-photography: #ffffff;
+		--bg-photography: #000000;
+		--text-photography: #ffffff;
+		--bg-nav-projects: #0000ff;
+		--bg-projects: #000010;
+		--text-projects: #afafff;
+		--bg-nav-contact: #ff0000;
+		--bg-contact: #100000;
+		--text-contact: #ffafaf;
+		--bg-nav-blog: #ffff00;
+		--bg-blog: #101000;
+		--text-blog: #ffedd5;
+	}
 }
 
 .lazyload,

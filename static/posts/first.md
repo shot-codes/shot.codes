@@ -26,6 +26,11 @@ hello there
 - list item 1
 - list item 2
 
+1. test
+2. another test
+
+---
+
 - [x] checkbox
 
 ```rust

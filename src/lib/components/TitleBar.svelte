@@ -4,7 +4,6 @@
 
 	let syncWorker: Worker | undefined = undefined;
 	let text = '';
-	let scrollY = 0;
 
 	onMount(async () => {
 		const SyncWorker = await import('$lib/utils/title.worker?worker');
@@ -35,17 +34,15 @@
 	}
 </script>
 
-<svelte:window bind:scrollY />
-
 <div />
 
 <div
 	class="fixed z-50 flex w-full justify-center py-1 text-[16pt]"
-	class:index={$activePage == Page.Index && scrollY > 0}
-	class:photography={$activePage == Page.Photography && scrollY > 0}
-	class:projects={$activePage == Page.Projects && scrollY > 0}
-	class:blog={$activePage == Page.Blog && scrollY > 0}
-	class:contact={$activePage == Page.Contact && scrollY > 0}
+	class:index={$activePage == Page.Index}
+	class:photography={$activePage == Page.Photography}
+	class:projects={$activePage == Page.Projects}
+	class:blog={$activePage == Page.Blog}
+	class:contact={$activePage == Page.Contact}
 >
 	<a href="/">shot.codes</a>
 	<span>{text}</span>
@@ -56,7 +53,7 @@
 		background-color: var(--bg-home);
 	}
 	.photography {
-		@apply bg-black bg-opacity-50 backdrop-blur-lg;
+		@apply bg-white bg-opacity-50 backdrop-blur-lg dark:bg-black dark:bg-opacity-50;
 	}
 	.projects {
 		background-color: var(--bg-projects);

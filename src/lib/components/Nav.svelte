@@ -25,23 +25,23 @@
 
 		if (route == '/') {
 			$activePage = Page.Index;
-			pointerOffset = 50;
+			pointerOffset = 100;
 		}
 		if (route.includes('/photography')) {
 			$activePage = Page.Photography;
-			pointerOffset = 105;
+			pointerOffset = 125;
 		}
 		if (route.includes('/projects')) {
 			$activePage = Page.Projects;
-			pointerOffset = 160;
+			pointerOffset = 150;
 		}
 		if (route.includes('/blog')) {
 			$activePage = Page.Blog;
-			pointerOffset = 215;
+			pointerOffset = 200;
 		}
 		if (route.includes('/contact')) {
 			$activePage = Page.Contact;
-			pointerOffset = 260;
+			pointerOffset = 225;
 		}
 	};
 
@@ -55,20 +55,20 @@
 </script>
 
 <div class="pointer-events-none fixed bottom-4 right-[15px] z-50 flex space-x-2">
-	<div class="h-12 w-12">
+	<div class="h-10 w-10">
 		<Scene {pointerOffset} />
 	</div>
 	{#if $activePage == Page.Index}
-		<div class="h-12 w-12" />
+		<div class="h-10 w-10" />
 	{/if}
 	{#if $activePage == Page.Index || $activePage == Page.Photography}
-		<div class="h-12 w-12" />
+		<div class="h-10 w-10" />
 	{/if}
 	{#if $activePage == Page.Index || $activePage == Page.Photography || $activePage == Page.Projects}
-		<div class="h-12 w-12" />
+		<div class="h-10 w-10" />
 	{/if}
 	{#if $activePage == Page.Index || $activePage == Page.Photography || $activePage == Page.Projects || $activePage == Page.Blog}
-		<div class="h-12 w-12" />
+		<div class="h-10 w-10" />
 	{/if}
 </div>
 
@@ -79,7 +79,7 @@
 		}}
 		class:opacity-0={$activePage == Page.Index}
 		disabled={$activePage == Page.Index}
-		class="h-12 w-12 rounded-full bg-[var(--bg-nav-home)]"
+		class="h-10 w-10 rounded-full bg-[var(--bg-nav-home)]"
 		aria-label="link to index"
 	/>
 	<button
@@ -88,7 +88,7 @@
 		}}
 		class:opacity-0={$activePage == Page.Photography}
 		disabled={$activePage == Page.Photography}
-		class="h-12 w-12 rounded-full bg-[var(--bg-nav-photography)]"
+		class="h-10 w-10 rounded-full bg-[var(--bg-nav-photography)]"
 		aria-label="link to photography"
 	/>
 	<button
@@ -97,7 +97,7 @@
 		}}
 		class:opacity-0={$activePage == Page.Projects}
 		disabled={$activePage == Page.Projects}
-		class="h-12 w-12 rounded-full bg-[var(--bg-nav-projects)]"
+		class="h-10 w-10 rounded-full bg-[var(--bg-nav-projects)]"
 		aria-label="link to projects"
 	/>
 
@@ -107,7 +107,7 @@
 		}}
 		class:opacity-0={$activePage == Page.Blog}
 		disabled={$activePage == Page.Blog}
-		class="h-12 w-12 rounded-full bg-[var(--bg-nav-blog)]"
+		class="h-10 w-10 rounded-full bg-[var(--bg-nav-blog)]"
 		aria-label="link to blog"
 	/>
 	<button
@@ -116,7 +116,7 @@
 		}}
 		class:opacity-0={$activePage == Page.Contact}
 		disabled={$activePage == Page.Contact}
-		class="h-12 w-12 rounded-full bg-[var(--bg-nav-contact)]"
+		class="h-10 w-10 rounded-full bg-[var(--bg-nav-contact)]"
 		aria-label="link to contact"
 	/>
 </div>

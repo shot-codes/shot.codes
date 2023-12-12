@@ -6,10 +6,10 @@ declare global {
 		// interface Locals {}
 		// interface PageData {}
 		// interface Platform {}
-		declare namespace svelteHTML {
-			interface HTMLAttributes<T> {
-				'on:clickOutside'?: CompositionEventHandler<T>;
-			}
+	}
+	declare namespace svelteHTML {
+		interface HTMLAttributes {
+			'on:click_outside'?: (e: CustomEvent) => void;
 		}
 	}
 }

@@ -1,19 +1,54 @@
 <script lang="ts">
+	import { lockScroll } from '$lib/stores';
+	import { fade } from 'svelte/transition';
 	import type { PageData } from './$types';
 	import ImageSet from 'web-image-gen-svelte';
+	import { clickOutside } from '$lib/utils/clickOutside';
 
 	export let data: PageData;
+	let src: string;
+	let showSourceImage = false;
 </script>
 
 <div class="mb-20 mt-10 flex flex-wrap justify-center gap-4">
 	{#key data.collectionConfig}
-		{#each Object.values(data.collectionConfig) as set}
-			<figure class="w-[350px]">
-				<ImageSet {set} />
-			</figure>
+		{#each Object.entries(data.collectionConfig) as [_, set], index}
+			<button
+				tabindex="0"
+				class="w-[350px]"
+				on:click={() => {
+					lockScroll.set(true);
+					showSourceImage = true;
+					src = data.collectionSources[index];
+				}}
+			>
+				<figure>
+					<ImageSet {set} />
+				</figure>
+			</button>
 		{/each}
 	{/key}
 </div>
+
+{#if showSourceImage}
+	<div
+		transition:fade
+		class="fixed left-0 top-0 flex h-full w-full flex-col items-center justify-center backdrop-blur md:p-6"
+	>
+		<img
+			{src}
+			alt="Full resolution source"
+			class="shadow-xl"
+			use:clickOutside
+			on:click_outside={() => {
+				src = '';
+				showSourceImage = false;
+				lockScroll.set(false);
+			}}
+		/>
+		<button class="mt-2 bg-[var(--bg-photography)] p-2 px-4 shadow">close</button>
+	</div>
+{/if}
 
 <style>
 	figure :global(.web-image-gen-img) {

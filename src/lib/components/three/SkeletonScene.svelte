@@ -2,12 +2,9 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
 	import { Canvas, T } from '@threlte/core';
-	import { DEG2RAD } from 'three/src/math/MathUtils';
-	import Eyeball from '$lib/models/Scene.svelte';
+	import Skeleton from '$lib/models/Skeleton.svelte';
 	import { type Spring, spring } from 'svelte/motion';
 	import { page } from '$app/stores';
-
-	export let pointerOffset = 0;
 
 	let eyeRotation: Spring<[number, number, number]> = spring([0, 0, 0]);
 	let pointer = {
@@ -25,8 +22,8 @@
 	}
 
 	const updatePointer = (event: MouseEvent) => {
-		const centerX = window.innerWidth - 320 + pointerOffset;
-		const centerY = window.innerHeight - 40;
+		const centerX = window.innerWidth / 2;
+		const centerY = window.innerHeight / 2;
 		const x = (event.clientX - centerX) / (window.innerWidth * 1.2);
 		const y = (event.clientY - centerY) / (window.innerHeight * 1.2);
 		pointer = { x, y };
@@ -47,6 +44,6 @@
 	<T.AmbientLight intensity={0.2} />
 
 	<T.Group rotation={$eyeRotation} position={[0, 0, 0]}>
-		<Eyeball scale={0.47} rotation={[0, 180 * DEG2RAD, 0]} />
+		<Skeleton scale={0.97} rotation={[0, 0, 0]} />
 	</T.Group>
 </Canvas>

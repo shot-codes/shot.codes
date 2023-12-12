@@ -16,7 +16,7 @@
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import Scene from '$lib/components/Scene.svelte';
+	import Scene from '$lib/components/three/NavScene.svelte';
 
 	let pointerOffset = 0;
 

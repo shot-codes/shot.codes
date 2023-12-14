@@ -18,8 +18,8 @@
 
 <div class="grid h-full grid-rows-[10px_1fr]">
 	<TitleBar />
-	<div class="z-20 overflow-auto p-2" class:overflow-y-hidden={$lockScroll}>
-		<ul class=" mt-8 flex flex-wrap justify-center">
+	<div class="overflow-auto p-2" class:overflow-y-hidden={$lockScroll}>
+		<ul class="relative z-50 mt-8 flex flex-wrap justify-center">
 			<li>
 				<a
 					class=" px-2 hover:underline"

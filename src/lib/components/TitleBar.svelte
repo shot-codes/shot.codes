@@ -50,7 +50,7 @@
 
 <style lang="postcss">
 	.index {
-		background-color: var(--bg-home);
+		/* background-color: var(--bg-blog); */
 	}
 	.photography {
 		@apply bg-white bg-opacity-50 backdrop-blur-lg dark:bg-black dark:bg-opacity-50;

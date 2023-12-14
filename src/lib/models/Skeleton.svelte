@@ -35,4 +35,3 @@ Command: npx @threlte/gltf@2.0.1 skeleton.gltf --transform
 
 	<slot {ref} />
 </T>
-

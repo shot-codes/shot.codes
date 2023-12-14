@@ -1,97 +1,82 @@
 {
-	"asset":{
-		"generator":"Khronos glTF Blender I/O v4.0.44",
-		"version":"2.0"
+	"asset": {
+		"generator": "Khronos glTF Blender I/O v4.0.44",
+		"version": "2.0"
 	},
-	"scene":0,
-	"scenes":[
+	"scene": 0,
+	"scenes": [
 		{
-			"name":"Scene",
-			"nodes":[
-				0
-			]
+			"name": "Scene",
+			"nodes": [0]
 		}
 	],
-	"nodes":[
+	"nodes": [
 		{
-			"mesh":0,
-			"name":"4639cb84395e47e89a734aa9882e7e37",
-			"rotation":[
-				0.7071068286895752,
-				0,
-				0,
-				0.7071068286895752
-			]
+			"mesh": 0,
+			"name": "4639cb84395e47e89a734aa9882e7e37",
+			"rotation": [0.7071068286895752, 0, 0, 0.7071068286895752]
 		}
 	],
-	"meshes":[
+	"meshes": [
 		{
-			"name":"4639cb84395e47e89a734aa9882e7e37",
-			"primitives":[
+			"name": "4639cb84395e47e89a734aa9882e7e37",
+			"primitives": [
 				{
-					"attributes":{
-						"POSITION":0,
-						"NORMAL":1
+					"attributes": {
+						"POSITION": 0,
+						"NORMAL": 1
 					},
-					"indices":2
+					"indices": 2
 				}
 			]
 		}
 	],
-	"accessors":[
+	"accessors": [
 		{
-			"bufferView":0,
-			"componentType":5126,
-			"count":22204,
-			"max":[
-				10.64111614227295,
-				5.298466682434082,
-				42.96165466308594
-			],
-			"min":[
-				-10.785240173339844,
-				-5.462878227233887,
-				-23.82159996032715
-			],
-			"type":"VEC3"
+			"bufferView": 0,
+			"componentType": 5126,
+			"count": 22204,
+			"max": [10.64111614227295, 5.298466682434082, 42.96165466308594],
+			"min": [-10.785240173339844, -5.462878227233887, -23.82159996032715],
+			"type": "VEC3"
 		},
 		{
-			"bufferView":1,
-			"componentType":5126,
-			"count":22204,
-			"type":"VEC3"
+			"bufferView": 1,
+			"componentType": 5126,
+			"count": 22204,
+			"type": "VEC3"
 		},
 		{
-			"bufferView":2,
-			"componentType":5123,
-			"count":46758,
-			"type":"SCALAR"
+			"bufferView": 2,
+			"componentType": 5123,
+			"count": 46758,
+			"type": "SCALAR"
 		}
 	],
-	"bufferViews":[
+	"bufferViews": [
 		{
-			"buffer":0,
-			"byteLength":266448,
-			"byteOffset":0,
-			"target":34962
+			"buffer": 0,
+			"byteLength": 266448,
+			"byteOffset": 0,
+			"target": 34962
 		},
 		{
-			"buffer":0,
-			"byteLength":266448,
-			"byteOffset":266448,
-			"target":34962
+			"buffer": 0,
+			"byteLength": 266448,
+			"byteOffset": 266448,
+			"target": 34962
 		},
 		{
-			"buffer":0,
-			"byteLength":93516,
-			"byteOffset":532896,
-			"target":34963
+			"buffer": 0,
+			"byteLength": 93516,
+			"byteOffset": 532896,
+			"target": 34963
 		}
 	],
-	"buffers":[
+	"buffers": [
 		{
-			"byteLength":626412,
-			"uri":"skeleton.bin"
+			"byteLength": 626412,
+			"uri": "skeleton.bin"
 		}
 	]
 }

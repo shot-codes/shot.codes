@@ -15,7 +15,7 @@
 		{#each Object.entries(data.collectionConfig) as [_, set], index}
 			<button
 				tabindex="0"
-				class="w-[350px]"
+				class="h-[350px] w-[350px]"
 				on:click={() => {
 					lockScroll.set(true);
 					showSourceImage = true;
@@ -23,7 +23,7 @@
 				}}
 			>
 				<figure>
-					<ImageSet {set} />
+					<ImageSet {set} pictureClass="object-contain" imgClass="h-full" />
 				</figure>
 			</button>
 		{/each}

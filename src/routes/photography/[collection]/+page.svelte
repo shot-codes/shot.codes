@@ -15,7 +15,7 @@
 		{#each Object.entries(data.collectionConfig) as [_, set], index}
 			<button
 				tabindex="0"
-				class="h-[350px] w-[350px]"
+				class="w-[350px]"
 				on:click={() => {
 					lockScroll.set(true);
 					showSourceImage = true;

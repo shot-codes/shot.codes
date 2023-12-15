@@ -23,7 +23,7 @@
 				}}
 			>
 				<figure>
-					<ImageSet {set} pictureClass="object-contain" imgClass="h-full" />
+					<ImageSet {set} pictureClass="object-contain" imgClass="h-full w-full" />
 				</figure>
 			</button>
 		{/each}

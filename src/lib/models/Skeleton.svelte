@@ -4,7 +4,7 @@ Command: npx @threlte/gltf@2.0.1 skeleton.gltf --transform
 -->
 
 <script>
-	import { Group, LineBasicMaterial, MeshBasicMaterial } from 'three';
+	import { Group, MeshBasicMaterial } from 'three';
 	import { T, forwardEventHandlers } from '@threlte/core';
 	import { useGltf } from '@threlte/extras';
 

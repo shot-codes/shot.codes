@@ -16,6 +16,7 @@
 			<button
 				tabindex="0"
 				class="h-fit w-[350px]"
+				disabled
 				on:click={() => {
 					lockScroll.set(true);
 					showSourceImage = true;

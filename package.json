@@ -6,6 +6,7 @@
 		"dev": "vite dev --host",
 		"generate": "pnpm exec web-image-gen generate",
 		"build": "pnpm exec web-image-gen generate && vite build",
+		"build-no-gen": "vite build",
 		"build-nogen": "vite build",
 		"preview": "vite preview --host",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -14,14 +15,12 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@dimforge/rapier3d-compat": "^0.11.2",
 		"@sveltejs/adapter-auto": "^2.1.1",
 		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/kit": "^1.29.1",
 		"@tailwindcss/typography": "^0.5.10",
 		"@threlte/core": "^6.1.1",
 		"@threlte/extras": "^5.7.0",
-		"@threlte/rapier": "^1.1.4",
 		"@types/node": "^20.10.4",
 		"@types/three": "^0.155.1",
 		"@typescript-eslint/eslint-plugin": "^5.62.0",

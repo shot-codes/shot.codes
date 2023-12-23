@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
-  '@dimforge/rapier3d-compat':
-    specifier: ^0.11.2
-    version: 0.11.2
   '@sveltejs/adapter-auto':
     specifier: ^2.1.1
     version: 2.1.1(@sveltejs/kit@1.29.1)
@@ -26,9 +23,6 @@ devDependencies:
   '@threlte/extras':
     specifier: ^5.7.0
     version: 5.7.0(svelte@4.2.8)(three@0.159.0)
-  '@threlte/rapier':
-    specifier: ^1.1.4
-    version: 1.1.4(@dimforge/rapier3d-compat@0.11.2)(svelte@4.2.8)(three@0.159.0)
   '@types/node':
     specifier: ^20.10.4
     version: 20.10.4
@@ -122,10 +116,6 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.20
-    dev: true
-
-  /@dimforge/rapier3d-compat@0.11.2:
-    resolution: {integrity: sha512-vdWmlkpS3G8nGAzLuK7GYTpNdrkn/0NKCe0l1Jqxc7ZZOB3N0q9uG/Ap9l9bothWuAvxscIt0U97GVLr0lXWLg==}
     dev: true
 
   /@esbuild/android-arm64@0.18.20:
@@ -556,18 +546,6 @@ packages:
       svelte: 4.2.8
       three: 0.159.0
       troika-three-text: 0.47.2(three@0.159.0)
-    dev: true
-
-  /@threlte/rapier@1.1.4(@dimforge/rapier3d-compat@0.11.2)(svelte@4.2.8)(three@0.159.0):
-    resolution: {integrity: sha512-O9GWlmiL7nngf6JBPKp1d79/emm4mWd44tWSeerjq8XtD4RRFY0qyQ0pls19vidq/EsyzVeZ82V9t7bpaHfVJQ==}
-    peerDependencies:
-      '@dimforge/rapier3d-compat': '>=0.11'
-      svelte: '>=4'
-      three: '>=0.133'
-    dependencies:
-      '@dimforge/rapier3d-compat': 0.11.2
-      svelte: 4.2.8
-      three: 0.159.0
     dev: true
 
   /@tweenjs/tween.js@18.6.4:

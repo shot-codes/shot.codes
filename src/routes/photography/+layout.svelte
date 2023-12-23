@@ -17,7 +17,7 @@
 
 <div class="flex items-end px-10 pb-16 pt-16">
 	<div class="flex h-full w-full flex-wrap items-end justify-center">
-		{#each data.photographyCollections as collection}
+		{#each data.collections as collection}
 			<a
 				href="/photography/{collection}"
 				class=" mx-2 hover:underline"

@@ -1,7 +1,7 @@
 ---
-title: First post
-description: This is the first post in my blog.
-date: '2023-4-14'
+title: The making of shot.codes
+description: An attempt at documenting the process (in retrospect) of making this webpage.
+date: '2023-12-23'
 categories:
   - sveltekit
   - svelte

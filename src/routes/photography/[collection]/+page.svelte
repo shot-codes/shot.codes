@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import type { PageData } from './$types';
 	import ImageSet from 'web-image-gen-svelte';
 	import type { ImageSet as ImgSet } from 'web-image-gen-svelte';
 
-	export let data: PageData;
+	export let data;
 	let src: string;
 	let showSourceImage = false;
 	let activeImage: ImgSet;
@@ -51,9 +50,3 @@
 		</div>
 	</div>
 {/if}
-
-<style>
-	figure :global(.web-image-gen-img) {
-		width: 100%;
-	}
-</style>

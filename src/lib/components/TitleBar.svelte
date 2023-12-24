@@ -56,7 +56,7 @@
 		@apply bg-white bg-opacity-50 backdrop-blur-lg dark:bg-black dark:bg-opacity-50;
 	}
 	.projects {
-		background-color: var(--bg-projects);
+		@apply bg-opacity-50 backdrop-blur-lg dark:bg-opacity-50;
 	}
 	.blog {
 		@apply bg-[(var(--bg-blog))] bg-opacity-50 backdrop-blur-lg dark:bg-opacity-50;

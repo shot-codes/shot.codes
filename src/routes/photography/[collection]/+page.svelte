@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { lockScroll } from '$lib/stores';
 	import { fade } from 'svelte/transition';
 	import type { PageData } from './$types';
 	import ImageSet from 'web-image-gen-svelte';
-	import { clickOutside } from '$lib/utils/clickOutside';
+	import type { ImageSet as ImgSet } from 'web-image-gen-svelte';
 
 	export let data: PageData;
 	let src: string;
 	let showSourceImage = false;
+	let activeImage: ImgSet;
 </script>
 
 <div class="mb-20 mt-10 flex flex-wrap justify-center gap-4">
@@ -16,11 +16,10 @@
 			<button
 				tabindex="0"
 				class="h-fit w-[350px]"
-				disabled
 				on:click={() => {
-					lockScroll.set(true);
 					showSourceImage = true;
 					src = data.collectionSources[index];
+					activeImage = set;
 				}}
 			>
 				<figure>
@@ -34,20 +33,22 @@
 {#if showSourceImage}
 	<div
 		transition:fade
-		class="fixed left-0 top-0 flex h-full w-full flex-col items-center justify-center backdrop-blur md:p-6"
+		class="fixed left-0 top-0 z-50 flex h-full w-full flex-col items-center justify-center backdrop-blur md:p-6"
 	>
-		<img
-			{src}
-			alt="Full resolution source"
-			class="shadow-xl"
-			use:clickOutside
-			on:click_outside={() => {
-				src = '';
-				showSourceImage = false;
-				lockScroll.set(false);
-			}}
-		/>
-		<button class="mt-2 bg-[var(--bg-photography)] p-2 px-4 shadow">close</button>
+		<ImageSet set={activeImage} imgClass="max-h-[80vh] shadow-lg" />
+		<div class="flex h-12 gap-2 p-2">
+			<button
+				class="flex h-full items-center bg-[var(--bg-photography)] px-4 shadow-lg"
+				on:click={() => {
+					showSourceImage = false;
+				}}
+			>
+				close
+			</button>
+			<a href={src} class="flex h-full items-center bg-[var(--bg-photography)] px-4 shadow-lg"
+				>Full Resolution</a
+			>
+		</div>
 	</div>
 {/if}
 

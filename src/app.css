@@ -21,11 +21,13 @@ body {
 	--bg-contact: #ffcccc;
 	--text-contact: #ff0000;
 	--bg-nav-blog: #ffff00;
-	--bg-blog: #ffffee;
+	--bg-blog: #ededed;
+	/* --bg-blog: #ffffee; */
 	--text-blog: #4e2e00;
+	/* --text-blog: #4e2e00; */
 
 	--shiki-color-text: #101010;
-	--shiki-color-background: #f4f4d4;
+	--shiki-color-background: #ffffff;
 	--shiki-token-constant: #9d24a9;
 	--shiki-token-string: #770000;
 	--shiki-token-comment: #707070;
@@ -52,9 +54,10 @@ body {
 		--bg-contact: #100000;
 		--text-contact: #ffafaf;
 		--bg-nav-blog: #ffff00;
-		--bg-blog: #150e00;
+		--bg-blog: #171717;
 		/* --bg-blog: #171717; */
-		--text-blog: #ffedd5;
+		/* --text-blog: #ffedd5; */
+		--text-blog: #ffffa0;
 
 		--shiki-color-text: #eeeeee;
 		--shiki-color-background: #080600;
@@ -94,10 +97,13 @@ body {
 	font-style: normal;
 	font-display: swap;
 }
+
 @font-face {
-	font-family: 'Heming';
-	src: url('/fonts/Heming Variable.ttf');
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'Gambarino Regular';
+	src: url('../fonts/Gambarino-Regular.woff2') format('woff2'),
+		url('../fonts/Gambarino-Regular.woff') format('woff'),
+		url('../fonts/Gambarino-Regular.ttf') format('truetype');
+	font-weight: 400;
 	font-display: swap;
+	font-style: normal;
 }

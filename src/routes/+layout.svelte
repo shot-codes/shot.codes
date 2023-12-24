@@ -3,7 +3,6 @@
 	import { page } from '$app/stores';
 	import TitleBar from '$lib/components/TitleBar.svelte';
 	import Nav from '$lib/components/Nav.svelte';
-	import { lockScroll } from '$lib/stores';
 </script>
 
 <svelte:head>
@@ -19,7 +18,7 @@
 
 <div class="grid h-full grid-rows-[10px_1fr]">
 	<TitleBar />
-	<div class="overflow-auto p-2" class:overflow-y-hidden={$lockScroll}>
+	<div class="overflow-auto p-2">
 		<ul class="relative z-20 mt-8 flex flex-wrap justify-center">
 			<li>
 				<a

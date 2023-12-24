@@ -1,19 +1,10 @@
 import type { LayoutServerLoad } from './$types';
+import { readdirSync } from 'node:fs';
 
 export const load = (async () => {
-	const dataPhotography: Record<string, { default: string; [Symbol.toStringTag]: string }> =
-		import.meta.glob('../../../static/images/*/*.{png,jpg,jpeg}', { eager: true });
+	const collections = readdirSync('static/images', { withFileTypes: true })
+		.filter((f) => f.isDirectory())
+		.map((f) => f.name);
 
-	const collections = Array.from(
-		new Set(
-			Object.keys(dataPhotography).map((path) => {
-				const folderPath = path.split('/').slice(0, -1).join('/');
-				return folderPath.substring(folderPath.lastIndexOf('/') + 1);
-			})
-		)
-	);
-
-	return {
-		collections
-	};
+	return { collections };
 }) satisfies LayoutServerLoad;

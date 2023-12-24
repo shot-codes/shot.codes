@@ -59,7 +59,7 @@
 		background-color: var(--bg-projects);
 	}
 	.blog {
-		background-color: var(--bg-blog);
+		@apply bg-[(var(--bg-blog))] bg-opacity-50 backdrop-blur-lg dark:bg-opacity-50;
 	}
 	.contact {
 		background-color: var(--bg-contact);

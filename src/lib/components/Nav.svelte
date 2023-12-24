@@ -54,7 +54,7 @@
 	});
 </script>
 
-<div class="pointer-events-none fixed bottom-4 right-[15px] z-50 flex space-x-2">
+<div class="pointer-events-none fixed bottom-4 right-[15px] z-40 flex space-x-2">
 	<div class="h-10 w-10">
 		<Scene {pointerOffset} />
 	</div>

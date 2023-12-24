@@ -16,7 +16,7 @@
 </svelte:head>
 
 <div class="flex items-end px-10 pb-16 pt-16">
-	<div class="flex h-full w-full flex-wrap items-end justify-center">
+	<div class="flex h-full w-full flex-wrap items-end justify-center gap-2">
 		{#each data.posts as post}
 			<a
 				href="/blog/{post.slug}"

@@ -1,15 +1,8 @@
-import { GITHUB_ACCESS_TOKEN } from '$env/static/private';
 import type { LayoutServerLoad } from './$types';
-import type { GetResponseDataTypeFromEndpointMethod } from '@octokit/types';
-import { Octokit } from 'octokit';
-
-type RepoList = GetResponseDataTypeFromEndpointMethod<
-	typeof octokit.rest.repos.listForAuthenticatedUser
->;
-const octokit = new Octokit({ auth: GITHUB_ACCESS_TOKEN });
+import { github, type RepoList } from '$lib/server/githubApi';
 
 async function getAllRepos(page = 1, repos: RepoList = []) {
-	const response = await octokit.rest.repos.listForAuthenticatedUser({
+	const response = await github.rest.repos.listForAuthenticatedUser({
 		visibility: 'public',
 		per_page: 100,
 		page: page

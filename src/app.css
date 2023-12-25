@@ -15,28 +15,14 @@ body {
 	--bg-photography: #ffffff;
 	--text-photography: #000000;
 	--bg-nav-projects: #0000ff;
-	--bg-projects: #ccccff;
+	--bg-projects: #ececff;
 	--text-projects: #2020ff;
 	--bg-nav-contact: #ff0000;
 	--bg-contact: #ffcccc;
 	--text-contact: #ff0000;
 	--bg-nav-blog: #ffff00;
 	--bg-blog: #ededed;
-	/* --bg-blog: #ffffee; */
 	--text-blog: #4e2e00;
-	/* --text-blog: #4e2e00; */
-
-	--shiki-color-text: #101010;
-	--shiki-color-background: #ffffff;
-	--shiki-token-constant: #9d24a9;
-	--shiki-token-string: #770000;
-	--shiki-token-comment: #707070;
-	--shiki-token-keyword: #101010;
-	--shiki-token-parameter: #101010;
-	--shiki-token-function: #0000bb;
-	--shiki-token-string-expression: #008b00;
-	--shiki-token-punctuation: #303030;
-	--shiki-token-link: #101010;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -48,28 +34,14 @@ body {
 		--bg-photography: #000000;
 		--text-photography: #ffffff;
 		--bg-nav-projects: #0000ff;
-		--bg-projects: #000010;
+		--bg-projects: #101020;
 		--text-projects: #afafff;
 		--bg-nav-contact: #ff0000;
 		--bg-contact: #100000;
 		--text-contact: #ffafaf;
 		--bg-nav-blog: #ffff00;
 		--bg-blog: #171717;
-		/* --bg-blog: #171717; */
-		/* --text-blog: #ffedd5; */
 		--text-blog: #ffffa0;
-
-		--shiki-color-text: #eeeeee;
-		--shiki-color-background: #080600;
-		--shiki-token-constant: #9852d5;
-		--shiki-token-string: #00bb00;
-		--shiki-token-comment: #5b5b5b;
-		--shiki-token-keyword: #aaaaaa;
-		--shiki-token-parameter: #aa0000;
-		--shiki-token-function: #6080fb;
-		--shiki-token-string-expression: #40bb40;
-		--shiki-token-punctuation: #aaaaaa;
-		--shiki-token-link: #eeeeee;
 	}
 }
 

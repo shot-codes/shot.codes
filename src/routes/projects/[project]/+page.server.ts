@@ -1,8 +1,14 @@
 import type { PageServerLoad } from './$types';
 import { github, user } from '$lib/server/githubApi';
-import remarkHtml from 'remark-html';
+import withShiki from '@stefanprobst/remark-shiki';
+import toHast from 'remark-rehype';
+import withHtmlInMarkdown from 'rehype-raw';
+import toHtml from 'rehype-stringify';
 import remarkParse from 'remark-parse';
 import { unified } from 'unified';
+import shiki from 'shiki';
+
+const highlighter = await shiki.getHighlighter({ theme: 'css-variables' });
 
 export const load: PageServerLoad = async ({ params, fetch }) => {
 	const response = await github.rest.repos.get({
@@ -20,7 +26,14 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
 	);
 	const readme = await readmeRaw.text();
 
-	const file = await unified().use(remarkParse).use(remarkHtml).process(readme);
+	const file = await unified()
+		.use(remarkParse)
+		// @ts-expect-error ts is giving an error on the type of withShiki, but it's from the docs and works
+		.use(withShiki, { highlighter })
+		.use(toHast, { allowDangerousHtml: true })
+		.use(withHtmlInMarkdown)
+		.use(toHtml)
+		.process(readme);
 
 	return {
 		topics,

@@ -2,7 +2,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
-	import { Canvas, T } from '@threlte/core';
+	import { T, useTask } from '@threlte/core';
 	import Skeleton from '$lib/models/Skeleton.svelte';
 	import Camera from '$lib/models/Camera.svelte';
 	import Wrench from '$lib/models/Wrench.svelte';
@@ -28,37 +28,10 @@
 		pointer = { x: -x, y: -y };
 	};
 
-	let fullscreen = false;
-	let width = 0;
-	let height = 0;
-	let innerHeight: number;
-	let innerWidth: number;
-
 	const skeletonScale = spring(0);
 	const cameraScale = spring(0);
 	const wrenchScale = spring(0);
 	const typewriterScale = spring(0);
-
-	$: {
-		if (fullscreen) {
-			width = innerWidth;
-			height = innerHeight;
-		} else {
-			width = 100;
-			height = 100;
-		}
-	}
-
-	$: {
-		if (
-			['/', '/photography', '/blog', '/projects', '/contact'].includes($page.route.id as string)
-		) {
-			fullscreen = true;
-		} else {
-			fullscreen = false;
-		}
-	}
-
 	$: {
 		if ($page.route.id == '/') {
 			skeletonScale.set(1);
@@ -92,6 +65,11 @@
 		}
 	}
 
+	let rotation = 0;
+	useTask((delta) => {
+		rotation += delta / 3;
+	});
+
 	onMount(() => {
 		if (browser) window.addEventListener('mousemove', updatePointer);
 	});
@@ -101,33 +79,22 @@
 	});
 </script>
 
-<svelte:window bind:innerWidth bind:innerHeight />
+<T.PerspectiveCamera makeDefault position={[0, 0, 200]} fov={32} />
 
-<div
-	class="pointer-events-none fixed bottom-0 left-0 z-[-9999]"
-	style=" height: {height}px; width: {width}px;"
->
-	<Canvas>
-		<T.PerspectiveCamera makeDefault position={[0, 0, 200]} fov={32} />
+<T.Group rotation.y={rotation}>
+	<T.Group rotation={$eyeRotation} position={[0, 0, 0]} scale={$skeletonScale}>
+		<Skeleton scale={1} rotation={[0, 0, 0]} />
+	</T.Group>
 
-		<T.Group rotation={$eyeRotation} position={[0, 0, 0]} scale={$skeletonScale}>
-			<Skeleton scale={1} rotation={[0, 0, 0]} />
-		</T.Group>
+	<T.Group rotation={$eyeRotation} scale={$cameraScale} position={[0, 0, 0]}>
+		<Camera scale={10.97} position={[0, -15, 0]} rotation={[0, 270 * DEG2RAD, 0]} />
+	</T.Group>
 
-		<T.Group rotation={$eyeRotation} scale={$cameraScale} position={[0, 0, 0]}>
-			<Camera scale={10.97} position={[0, -15, 0]} rotation={[0, 270 * DEG2RAD, 0]} />
-		</T.Group>
+	<T.Group rotation={$eyeRotation} scale={$wrenchScale} position={[0, 0, 0]}>
+		<Wrench scale={30.97} position={[0, 0, 0]} rotation={[20 * DEG2RAD, 0, 0]} />
+	</T.Group>
 
-		<T.Group rotation={$eyeRotation} scale={$wrenchScale} position={[0, 0, 0]}>
-			<Wrench scale={30.97} position={[0, 0, 0]} rotation={[20 * DEG2RAD, 0, 0]} />
-		</T.Group>
-
-		<T.Group rotation={$eyeRotation} scale={$typewriterScale} position={[0, 0, 0]}>
-			<Typewriter
-				scale={30.97}
-				position={[0, -10, -20]}
-				rotation={[5 * DEG2RAD, 180 * DEG2RAD, 0]}
-			/>
-		</T.Group>
-	</Canvas>
-</div>
+	<T.Group rotation={$eyeRotation} scale={$typewriterScale} position={[0, 0, 0]}>
+		<Typewriter scale={30.97} position={[0, -10, -20]} rotation={[5 * DEG2RAD, 180 * DEG2RAD, 0]} />
+	</T.Group>
+</T.Group>

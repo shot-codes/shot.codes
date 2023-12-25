@@ -23,7 +23,7 @@
 		} else {
 			colorScheme.set('light');
 		}
-		scene = (await import('$lib/components/three/Scene.svelte')).default;
+		scene = (await import('$lib/components/three/Background.svelte')).default;
 	});
 </script>
 

@@ -24,11 +24,11 @@ devDependencies:
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.3.6)
   '@threlte/core':
-    specifier: ^6.1.1
-    version: 6.1.1(svelte@4.2.8)(three@0.159.0)
+    specifier: ^7.0.12
+    version: 7.0.12(svelte@4.2.8)(three@0.159.0)
   '@threlte/extras':
-    specifier: ^5.7.0
-    version: 5.7.0(svelte@4.2.8)(three@0.159.0)
+    specifier: ^8.1.0
+    version: 8.1.0(svelte@4.2.8)(three@0.159.0)
   '@types/node':
     specifier: ^20.10.4
     version: 20.10.4
@@ -811,23 +811,23 @@ packages:
       tailwindcss: 3.3.6
     dev: true
 
-  /@threlte/core@6.1.1(svelte@4.2.8)(three@0.159.0):
-    resolution: {integrity: sha512-bEsZIZzmP6vOg4bWbUg5EKxEid3KhO6YZ69bQM1NrtSC467KxXMxNorPGiAr2e5Z0L3w5++aRoSKmYjeUMLZ0g==}
+  /@threlte/core@7.0.12(svelte@4.2.8)(three@0.159.0):
+    resolution: {integrity: sha512-+I4+mVsxAfn4Og9it48x5+oQSDr3kg4O1qpCxUdVVPAzu69MpVd+2iYU9lnBlS1ZCSlNlTXU2UUFlw895HJ9ZA==}
     peerDependencies:
       svelte: '>=4'
       three: '>=0.133'
     dependencies:
+      mitt: 3.0.1
       svelte: 4.2.8
       three: 0.159.0
     dev: true
 
-  /@threlte/extras@5.7.0(svelte@4.2.8)(three@0.159.0):
-    resolution: {integrity: sha512-bDdKNUz3dVeqdPqhcpTPa0iXE0AL3adhavRN7FnkS0ieu1ZQ9Tft4o3e8jdU5psaXoj2UmUKMkSFziSOYlz7Pg==}
+  /@threlte/extras@8.1.0(svelte@4.2.8)(three@0.159.0):
+    resolution: {integrity: sha512-Pd950komky4UQYNEA31vwgc6bvD18Siq5tgoLjMxmS9/w7qq0xUBMsM33gkDoZav4YAaCeltFKZIc8gmUhzpcg==}
     peerDependencies:
       svelte: '>=4'
       three: '>=0.133'
     dependencies:
-      lodash-es: 4.17.21
       svelte: 4.2.8
       three: 0.159.0
       troika-three-text: 0.47.2(three@0.159.0)
@@ -2328,10 +2328,6 @@ packages:
       p-locate: 5.0.0
     dev: true
 
-  /lodash-es@4.17.21:
-    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
-    dev: true
-
   /lodash.assignwith@4.2.0:
     resolution: {integrity: sha512-ZznplvbvtjK2gMvnQ1BR/zqPFZmS6jbK4p+6Up4xcRYA7yMIwxHCfbTcrYxXKzzqLsQ05eJPVznEW3tuwV7k1g==}
     dev: true
@@ -2678,6 +2674,10 @@ packages:
 
   /minimist@1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
+    dev: true
+
+  /mitt@3.0.1:
+    resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
     dev: true
 
   /mkdirp-classic@0.5.3:

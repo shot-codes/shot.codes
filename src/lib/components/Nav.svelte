@@ -15,10 +15,10 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
-	import { onMount } from 'svelte';
-	import Scene from '$lib/components/three/NavScene.svelte';
+	import { onMount, type ComponentType } from 'svelte';
 
 	let pointerOffset = 0;
+	let eyeball: ComponentType;
 
 	const update = (route: string | null) => {
 		if (route == null) return;
@@ -49,14 +49,15 @@
 		update($page.route.id);
 	}
 
-	onMount(() => {
+	onMount(async () => {
 		update($page.route.id);
+		eyeball = (await import('$lib/components/three/NavScene.svelte')).default;
 	});
 </script>
 
 <div class="pointer-events-none fixed bottom-4 right-[15px] z-40 flex space-x-2">
 	<div class="h-10 w-10">
-		<Scene {pointerOffset} />
+		<svelte:component this={eyeball} {pointerOffset} />
 	</div>
 	{#if $activePage == Page.Index}
 		<div class="h-10 w-10" />

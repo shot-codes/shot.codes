@@ -1,5 +1,10 @@
 <script lang="ts">
-	import SkeletonScene from '$lib/components/three/SkeletonScene.svelte';
+	import { onMount, type ComponentType } from 'svelte';
+
+	let skeleton: ComponentType;
+	onMount(async () => {
+		skeleton = (await import('$lib/components/three/SkeletonScene.svelte')).default;
+	});
 </script>
 
 <svelte:head>
@@ -9,5 +14,5 @@
 	<p class="relative z-50 bg-[var(--bg-home)]">Hi, I'm Shot. I make stuff.</p>
 </div>
 <div class="fixed left-0 top-0 z-10 h-full w-full">
-	<SkeletonScene />
+	<svelte:component this={skeleton} />
 </div>

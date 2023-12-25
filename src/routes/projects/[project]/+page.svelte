@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="mx-auto mb-20 mt-8 flex max-w-[600px] flex-col items-center justify-center space-y-2 text-center"
+	class="mx-auto mb-20 mt-8 flex max-w-[600px] flex-col items-center justify-center space-y-2 text-center text-neutral-900 dark:text-neutral-100"
 >
 	<div class="text-sm">TAGS</div>
 	<div class="flex gap-4 font-bold">

@@ -1,8 +1,30 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/stores';
+	import { browser } from '$app/environment';
 	import TitleBar from '$lib/components/TitleBar.svelte';
 	import Nav from '$lib/components/Nav.svelte';
+	import { colorScheme } from '$lib/stores';
+	import { onMount, type ComponentType } from 'svelte';
+
+	if (browser) {
+		const colorSchemeListener = window.matchMedia('(prefers-color-scheme: dark)');
+		colorSchemeListener.addEventListener('change', (event) => {
+			const prefersDarkScheme = event.matches;
+			colorScheme.set(prefersDarkScheme ? 'dark' : 'light');
+		});
+	}
+
+	let scene: ComponentType;
+	onMount(async () => {
+		const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		if (prefersDarkScheme) {
+			colorScheme.set('dark');
+		} else {
+			colorScheme.set('light');
+		}
+		scene = (await import('$lib/components/three/Scene.svelte')).default;
+	});
 </script>
 
 <svelte:head>
@@ -16,10 +38,12 @@
 	</style>
 </svelte:head>
 
+<svelte:component this={scene} />
+
 <div class="grid h-full grid-rows-[10px_1fr]">
 	<TitleBar />
 	<div class="overflow-auto p-2">
-		<ul class="relative z-20 mt-8 flex flex-wrap justify-center">
+		<ul class="relative mt-8 flex flex-wrap justify-center">
 			<li>
 				<a
 					class=" px-2 hover:underline"

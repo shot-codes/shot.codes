@@ -19,7 +19,7 @@
 		{#each data.collections as collection}
 			<a
 				href="/photography/{collection}"
-				class=" mx-2 hover:underline"
+				class=" mx-2 bg-[var(--bg-photography)] hover:underline"
 				title={collection.toUpperCase()}
 				class:italic={$page.url.href.includes(collection)}
 				class:font-bold={$page.url.href.includes(collection)}

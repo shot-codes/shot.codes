@@ -18,7 +18,7 @@
 		{#each data.repos as collection}
 			<a
 				href="/projects/{collection.name}"
-				class=" mx-2 hover:underline"
+				class=" mx-2 bg-[var(--bg-projects)] hover:underline"
 				title={collection.name.toUpperCase()}
 				class:italic={$page.url.href.includes(collection.name)}
 				class:font-bold={$page.url.href.includes(collection.name)}

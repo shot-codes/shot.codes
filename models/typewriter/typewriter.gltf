@@ -1,0 +1,104 @@
+{
+	"asset": {
+		"generator": "Khronos glTF Blender I/O v4.0.44",
+		"version": "2.0"
+	},
+	"scene": 0,
+	"scenes": [
+		{
+			"name": "Scene",
+			"nodes": [2]
+		}
+	],
+	"nodes": [
+		{
+			"mesh": 0,
+			"name": "Object_2"
+		},
+		{
+			"children": [0],
+			"name": "a9e0c70381df45d3941a129f47a60ede.obj.cleaner.materialmerger.gle"
+		},
+		{
+			"children": [1],
+			"name": "Sketchfab_model",
+			"rotation": [-0.70710688829422, 0, 0, 0.7071066498756409],
+			"scale": [2.752277374267578, 2.7522776126861572, 2.7522776126861572]
+		}
+	],
+	"meshes": [
+		{
+			"name": "Object_0.002",
+			"primitives": [
+				{
+					"attributes": {
+						"POSITION": 0,
+						"NORMAL": 1,
+						"TEXCOORD_0": 2
+					},
+					"indices": 3
+				}
+			]
+		}
+	],
+	"accessors": [
+		{
+			"bufferView": 0,
+			"componentType": 5126,
+			"count": 1317,
+			"max": [0.2710520029067993, 0.4163149893283844, 0.2955099940299988],
+			"min": [-0.2710520029067993, -0.07511699944734573, -0.0007929999846965075],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 1,
+			"componentType": 5126,
+			"count": 1317,
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 2,
+			"componentType": 5126,
+			"count": 1317,
+			"type": "VEC2"
+		},
+		{
+			"bufferView": 3,
+			"componentType": 5123,
+			"count": 2820,
+			"type": "SCALAR"
+		}
+	],
+	"bufferViews": [
+		{
+			"buffer": 0,
+			"byteLength": 15804,
+			"byteOffset": 0,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 15804,
+			"byteOffset": 15804,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 10536,
+			"byteOffset": 31608,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 5640,
+			"byteOffset": 42144,
+			"target": 34963
+		}
+	],
+	"buffers": [
+		{
+			"byteLength": 47784,
+			"uri": "typewriter.bin"
+		}
+	]
+}

@@ -14,7 +14,7 @@ Title: Eye Blend
 
 	export const ref = new Group();
 
-	const gltf = useGltf('/models/scene-transformed.glb', { useDraco: true });
+	const gltf = useGltf('/models/eyeball-transformed.glb', { useDraco: true });
 
 	const component = forwardEventHandlers();
 </script>

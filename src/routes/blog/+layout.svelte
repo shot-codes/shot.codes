@@ -19,7 +19,7 @@
 		{#each data.posts as post}
 			<a
 				href="/blog/{post.slug}"
-				class=" mx-2 hover:underline"
+				class=" mx-2 bg-[var(--bg-blog)] hover:underline"
 				title={post.title.toUpperCase()}
 				class:italic={$page.url.href.includes(post.slug)}
 				class:font-bold={$page.url.href.includes(post.slug)}

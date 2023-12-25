@@ -1,0 +1,108 @@
+{
+	"asset": {
+		"generator": "Khronos glTF Blender I/O v4.0.44",
+		"version": "2.0"
+	},
+	"scene": 0,
+	"scenes": [
+		{
+			"name": "Scene",
+			"nodes": [0]
+		}
+	],
+	"nodes": [
+		{
+			"mesh": 0,
+			"name": "Camera",
+			"scale": [-0.2478150576353073, -0.025283267721533775, -0.2478150576353073],
+			"translation": [0, 2.0270447731018066, 1.1604466438293457]
+		}
+	],
+	"materials": [
+		{
+			"doubleSided": true,
+			"name": "DSLR",
+			"pbrMetallicRoughness": {
+				"baseColorFactor": [0.800000011920929, 0.800000011920929, 0.800000011920929, 1],
+				"metallicFactor": 0,
+				"roughnessFactor": 0.5
+			}
+		}
+	],
+	"meshes": [
+		{
+			"name": "Cylinder.002",
+			"primitives": [
+				{
+					"attributes": {
+						"POSITION": 0,
+						"NORMAL": 1,
+						"TEXCOORD_0": 2
+					},
+					"indices": 3,
+					"material": 0
+				}
+			]
+		}
+	],
+	"accessors": [
+		{
+			"bufferView": 0,
+			"componentType": 5126,
+			"count": 226,
+			"max": [1.8448206186294556, 80.57894897460938, 11.065320014953613],
+			"min": [-3.573211908340454, -19.835044860839844, -1.6998963356018066],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 1,
+			"componentType": 5126,
+			"count": 226,
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 2,
+			"componentType": 5126,
+			"count": 226,
+			"type": "VEC2"
+		},
+		{
+			"bufferView": 3,
+			"componentType": 5123,
+			"count": 384,
+			"type": "SCALAR"
+		}
+	],
+	"bufferViews": [
+		{
+			"buffer": 0,
+			"byteLength": 2712,
+			"byteOffset": 0,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2712,
+			"byteOffset": 2712,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 1808,
+			"byteOffset": 5424,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 768,
+			"byteOffset": 7232,
+			"target": 34963
+		}
+	],
+	"buffers": [
+		{
+			"byteLength": 8000,
+			"uri": "camera.bin"
+		}
+	]
+}

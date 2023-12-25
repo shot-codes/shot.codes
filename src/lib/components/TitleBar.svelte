@@ -2,7 +2,7 @@
 	import { Page, activePage } from './Nav.svelte';
 	import { onMount } from 'svelte';
 
-	let syncWorker: Worker | undefined = undefined;
+	let syncWorker: Worker;
 	let text = '';
 
 	onMount(async () => {
@@ -19,16 +19,16 @@
 				syncWorker?.postMessage('');
 				break;
 			case Page.Photography:
-				syncWorker?.postMessage('/photography');
+				syncWorker?.postMessage('/PHOTOGRAPHY');
 				break;
 			case Page.Projects:
-				syncWorker?.postMessage('/projects');
+				syncWorker?.postMessage('/PROJECTS');
 				break;
 			case Page.Blog:
-				syncWorker?.postMessage('/blog');
+				syncWorker?.postMessage('/BLOG');
 				break;
 			case Page.Contact:
-				syncWorker?.postMessage('/contact');
+				syncWorker?.postMessage('/CONTACT');
 				break;
 		}
 	}
@@ -44,7 +44,7 @@
 	class:blog={$activePage == Page.Blog}
 	class:contact={$activePage == Page.Contact}
 >
-	<a href="/">shot.codes</a>
+	<a href="/">SHOT.CODES</a>
 	<span>{text}</span>
 </div>
 

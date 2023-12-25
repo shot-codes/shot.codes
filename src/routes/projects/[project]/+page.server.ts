@@ -1,5 +1,8 @@
 import type { PageServerLoad } from './$types';
 import { github, user } from '$lib/server/githubApi';
+import remarkHtml from 'remark-html';
+import remarkParse from 'remark-parse';
+import { unified } from 'unified';
 
 export const load: PageServerLoad = async ({ params, fetch }) => {
 	const response = await github.rest.repos.get({
@@ -17,8 +20,10 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
 	);
 	const readme = await readmeRaw.text();
 
+	const file = await unified().use(remarkParse).use(remarkHtml).process(readme);
+
 	return {
 		topics,
-		readme
+		readme: String(file)
 	};
 };

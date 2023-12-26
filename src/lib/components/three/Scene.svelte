@@ -81,20 +81,26 @@
 
 <T.PerspectiveCamera makeDefault position={[0, 0, 200]} fov={32} />
 
-<T.Group rotation.y={rotation}>
-	<T.Group rotation={$eyeRotation} position={[0, 0, 0]} scale={$skeletonScale}>
-		<Skeleton scale={1} rotation={[0, 0, 0]} />
-	</T.Group>
+<T.Group rotation={$eyeRotation}>
+	<T.Group rotation.y={rotation}>
+		<T.Group position={[0, 0, 0]} scale={$skeletonScale}>
+			<Skeleton scale={1} rotation={[0, 0, 0]} />
+		</T.Group>
 
-	<T.Group rotation={$eyeRotation} scale={$cameraScale} position={[0, 0, 0]}>
-		<Camera scale={10.97} position={[0, -15, 0]} rotation={[0, 270 * DEG2RAD, 0]} />
-	</T.Group>
+		<T.Group scale={$cameraScale} position={[0, 0, 0]}>
+			<Camera scale={10.97} position={[0, -15, 0]} rotation={[0, 270 * DEG2RAD, 0]} />
+		</T.Group>
 
-	<T.Group rotation={$eyeRotation} scale={$wrenchScale} position={[0, 0, 0]}>
-		<Wrench scale={30.97} position={[0, 0, 0]} rotation={[20 * DEG2RAD, 0, 0]} />
-	</T.Group>
+		<T.Group scale={$wrenchScale} position={[0, 0, 0]}>
+			<Wrench scale={30.97} position={[0, 0, 0]} rotation={[20 * DEG2RAD, 0, 0]} />
+		</T.Group>
 
-	<T.Group rotation={$eyeRotation} scale={$typewriterScale} position={[0, 0, 0]}>
-		<Typewriter scale={30.97} position={[0, -10, -20]} rotation={[5 * DEG2RAD, 180 * DEG2RAD, 0]} />
+		<T.Group scale={$typewriterScale} position={[0, 0, 0]}>
+			<Typewriter
+				scale={30.97}
+				position={[0, -10, -20]}
+				rotation={[5 * DEG2RAD, 180 * DEG2RAD, 0]}
+			/>
+		</T.Group>
 	</T.Group>
 </T.Group>
